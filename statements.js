@@ -1,6 +1,6 @@
-'use strict',
+'use strict';
 
-const  TextOptions : {
+const  TextOptions = {
 
 	text0 : "You carry a tray with egg whites, a white bagel with cream cheese, and a side of vanilla icecream to Yawnkay East's bedroom and reflect on the last two years. Sure, Yawnkay has been demanding. \
 You look down at the plate and notice a stray sesame seed on the bagel, so you flick it off. \
@@ -19,9 +19,9 @@ Yawnkay lies atop his down comforters, his eyes open. \
 Dear Lord, he's dead! \
 You feel for a pulse because that's what people in the movies do, but he's definitely gone. \
 What in Yeezus's name are you going to do? \
-<break time='.5s'/>Do you want to, <emphasis>1</emphasis>, call the police, or, <emphasis>2</emphasis>, find the bodyguard?"
+<break time='.5s'/>Do you want to, <emphasis>1</emphasis>, call the police, or, <emphasis>2</emphasis>, find the bodyguard?",
 
-	fallback0 : "Say, <emphasis>1</emphasis>, for police, or, <emphasis>2</emphasis>, for bodyguard.";
+	repromptText0 : "Say, <emphasis>1</emphasis>, for police, or, <emphasis>2</emphasis>, for bodyguard.",
 
    text1 : "There’s a dead body in front of you. Of course you’re going to call the police! \
 You lift the receiver and dial 911. You tell the dispatcher that you’re at Yawnkay East’s pent house in Manhattan and that he’s not breathing. You ask them to send someone right away. \
@@ -39,9 +39,9 @@ You open the door to half a dozen uniformed officers and a couple of detectives 
 The officer sternly tells you that he needs to ask you a few questions. There is nothing at all friendly-looking about him. \
 He asks you what the heck happened here this morning. \
 You know you haven’t done anything wrong, but the way he’s talking is freaking you out. \
-<break time='.5s'/>What should you do? Should you, <emphasis>1</emphasis>, answer his questions or, <emphasis>2</emphasis>, ask for an attorney?"
+<break time='.5s'/>What should you do? Should you, <emphasis>1</emphasis>, answer his questions or, <emphasis>2</emphasis>, ask for an attorney?",
 
-	fallback1 : "Say, <emphasis>1</emphasis>, to answer his questions or, <emphasis>2</emphasis>, to ask for an attorney.",
+	repromptText1 : "Say, <emphasis>1</emphasis>, to answer his questions or, <emphasis>2</emphasis>, to ask for an attorney.",
 
    text2 : "This is <emphasis>Yawnkay</emphasis> we're talking about. You can't possibly call the police and tip off the media. You're going to have to find the bodyguard. \
 You jog downstairs to the foyer and quickly find him. It dawns on you that you've worked for Yawnkay for two years and yet don't know the bodyguard's name. \
@@ -61,9 +61,9 @@ A few minutes later, a person knocks softly on the door. Unlike any cop knock yo
 The bodyguard opens the door and two men in blue suits walk in. The bodyguard shows one of them to Yawnkay's bedroom and the other one escorts you to a couch in sitting room number nine. \
 He asks you what happened here. \
 You open your mouth to answer and only a croak comes out. You know you haven't done anything wrong, but still, you're nervous. A famous man is dead, and you've seen enough Law and Order to know that you're supposed to ask for an attorney. Or maybe you're overthinking this? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, answer his questions or, <emphasis>2</emphasis>, ask for an attorney?" 
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, answer his questions or, <emphasis>2</emphasis>, ask for an attorney?", 
 
-	fallback2 : "Say, <emphasis>1</emphasis>, to answer his questions or, <emphasis>2</emphasis>, to ask for an attorney.",
+	repromptText2 : "Say, <emphasis>1</emphasis>, to answer his questions or, <emphasis>2</emphasis>, to ask for an attorney.",
 
    text3 : "You tell the detective everything you know. \
  'Really?' you say. You tell him you didn’t realize the police could solve a murder investigation so quickly. \
@@ -80,9 +80,9 @@ The idea of Yawnkay committing suicide is fake news, but this cop obviously isn�
 The only way for Yawnkay’s murderer to be caught would be for you to find him—or her—yourself. \
 But who are you to run around New York City trying to catch a murderer? You have no investigatory training. \
 Well, other than that one paralegal class you took. But that was a long time ago. You should probably let it go. That’s the sane thing to do, right? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, let it go, or, <emphasis>2</emphasis>, investigate Yawnkay’s murder?"
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, let it go, or, <emphasis>2</emphasis>, investigate Yawnkay’s murder?",
 
-	fallback3 : "Say, <emphasis>1</emphasis>, for let it go, or, <emphasis>2</emphasis>, for investigate Yawnkay’s murder.",
+	repromptText3 : "Say, <emphasis>1</emphasis>, for let it go, or, <emphasis>2</emphasis>, for investigate Yawnkay’s murder.",
 
    text4a : "You tell the officer that you better speak to an attorney. \
 The cop narrows his eyes at you and scowls. \
@@ -104,9 +104,9 @@ After you’re finished, she says, \
 You can’t help but wonder why the attorney was necessary. That advice was obvious, but you go back into the interrogation room with the cop, the attorney now sitting beside you. \
 <audio src='https://s3.amazonaws.com/selectaskill/audio-1/cop5.mp3' /> \
 The cop scowls. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell the cop everything you know, or, <emphasis>2</emphasis>, tell him nothing?"
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell the cop everything you know, or, <emphasis>2</emphasis>, tell him nothing?",
 
-	fallback4a : "Say, <emphasis>1</emphasis>, for everything you know, or, <emphasis>2</emphasis>, for nothing.",
+	repromptText4a : "Say, <emphasis>1</emphasis>, for everything you know, or, <emphasis>2</emphasis>, for nothing.",
 
    text4b : "You tell the officer that you better speak to an attorney. \
 The cop narrows his eyes at you and scowls. \
@@ -120,9 +120,9 @@ After you’re finished she says, \
 'I know that,' you say. \
 You can’t help but wonder why the attorney was necessary. That advice was obvious, but you go back into the interrogation room with the cop, the attorney now sitting beside you. \
 The cop scowls. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell the cop everything you know, or, <emphasis>2</emphasis>, tell him nothing?"
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell the cop everything you know, or, <emphasis>2</emphasis>, tell him nothing?",
 
-	fallback4b : "Say, <emphasis>1</emphasis>, for everything you know, or, <emphasis>2</emphasis>, for nothing.",
+	repromptText4b : "Say, <emphasis>1</emphasis>, for everything you know, or, <emphasis>2</emphasis>, for nothing.",
 
    text5 : "You tell the detective everything you know. \
 Your attorney lets out a deep sigh and looks incredibly relieved. You’re not entirely sure why she was so stressed. It’s not like you’re dumb enough to refuse to answer his questions for absolutely no reason. \
@@ -140,9 +140,9 @@ The idea of Yawnkay committing suicide is fake news, but this cop obviously isn�
 The only way for Yawnkay’s murderer to be caught would be for you to find him—or her—yourself. \
 But who are you to run around New York City trying to catch a murderer? You have no investigatory training. \
 Well, other than that one paralegal class you took. But that was a long time ago. You should probably let it go. That’s the sane thing to do, right? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, let it go, or, <emphasis>2</emphasis>, investigate Yawnkay’s murder?"
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, let it go, or, <emphasis>2</emphasis>, investigate Yawnkay’s murder?",
 
-	fallback5 : "Say, <emphasis>1</emphasis>, for let it go, or, <emphasis>2</emphasis>, for investigate Yawnkay’s murder.",
+	repromptText5 : "Say, <emphasis>1</emphasis>, for let it go, or, <emphasis>2</emphasis>, for investigate Yawnkay’s murder.",
 
    text6a : "'I’m not telling you anything,' you say defiantly. \
 Even as you say the words, you know you’re making a really stupid mistake. It’s almost like you’re being controlled by some malevolent force outside of yourself. Like you can’t help but do anything a disembodied voice directs you to do. \
@@ -217,9 +217,9 @@ You go out the back door of Yawnkay’s building to avoid any poparazzi and take
 The blocky building rises before you. You flash security your Yawnkay East card, and they let you take the elevator up to Bob’s floor. \
 As you stand in front of the door to Bob’s condo, it dawns on you that you hadn’t really come up with a plan. \
 You look at the door handle and notice something: the door isn’t completely latched. You could just walk in. But is that a good idea? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, walk into the condo unannounced, or, <emphasis>2</emphasis>, knock on the door."
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, walk into the condo unannounced, or, <emphasis>2</emphasis>, knock on the door.",
 
-	fallback9 : "Say, <emphasis>1</emphasis>, to walk in unannounced, or, <emphasis>2</emphasis>, to knock on the door.",
+	repromptText9 : "Say, <emphasis>1</emphasis>, to walk in unannounced, or, <emphasis>2</emphasis>, to knock on the door.",
 
    text10 : "Your Lyft pulls in front of the type of exclusive hotel you’d only ever walked by before becoming an assistant to Yawnkay. The kind where a basic room starts at $1000 a night, so staying there is as much of a statement about what you can afford as it is a true desire for luxury. \
 Thankfully you’ve learned from your time with Yawnkay that if you stride ahead with your head high acting like you belong some place, people generally won’t question you. \
@@ -230,9 +230,9 @@ You see an item about a rumor that Yawnkay is dead, but thankfully that rumor ha
 You walk over to the front desk and ask for Christy Benner. The desk attendant tells you that she can’t give out any information regarding the guests, so you pull out Yawnkay East’s card and tell her Yawnkay needs you to deliver a message. \
 Thankfully this does the trick, and you learn Christy’s staying on the tenth floor. Not the penthouse. \
 Wow, she’s really slumming it. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, come right out and knock on her door, or, <emphasis>2</emphasis>, sneak into her room."
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, come right out and knock on her door, or, <emphasis>2</emphasis>, sneak into her room.",
 
-	fallback10 : "Say, <emphasis>1</emphasis>, to knock on her door, or, <emphasis>2</emphasis>, to sneak in.",
+	repromptText10 : "Say, <emphasis>1</emphasis>, to knock on her door, or, <emphasis>2</emphasis>, to sneak in.",
 
    text11 : "Tyler Quick ran into Yawnkay last night. That’s a lead you can’t pass up. \
 If you asked 100 random people off the street 'who do you think would want to kill Yawnkay East?' the top three answers you’d get would be his nemesis Tyler Quick, George W. Bush, or Yawnkay himself, so that no one else could take credit. \
@@ -247,9 +247,9 @@ You need to talk to Tyler. But how? \
 Usually you’d bust out your Yawnkay East card, which almost never fails in gaining you access, but you highly doubt that would help you get past Tyler Quick’s security. They might’ve taken a happy selfie together last night, but that doesn’t mean they’re BFFs or that her bodyguard would let one of Yawnkay’s people through. Maybe it would make more sense to talk to Kelly Purry first. \
 It was her event. And maybe she could give you the low down on what happened. \
 Decisions. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, go straight to Tyler Quick, or, <emphasis>2</emphasis>, talk to Kelly Purry."
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, go straight to Tyler Quick, or, <emphasis>2</emphasis>, talk to Kelly Purry.",
 
-	fallback11 : "Say, <emphasis>1</emphasis>, to go straight to Tyler Quick, or, <emphasis>2</emphasis>, to talk to Kelly Purry.",
+	repromptText11 : "Say, <emphasis>1</emphasis>, to go straight to Tyler Quick, or, <emphasis>2</emphasis>, to talk to Kelly Purry.",
 
    text12 : "You push the door open and walk on in. \
 You’re not sure what you’re going to find. \
@@ -269,10 +269,9 @@ Thankfully for the safety of your eyes, Bob and his companion are under the cove
 What the heck? But they were fighting online, like, ten minutes ago. \
 Grey Korea screams. \
 Bob squints at you. \
-<break time='.5s'/>How should you answer him? Should you, <emphasis>1</emphasis>, tell him Yawnkay is dead, or, <emphasis>2</emphasis>, ask him why he’s with Grey Korea."
+<break time='.5s'/>How should you answer him? Should you, <emphasis>1</emphasis>, tell him Yawnkay is dead, or, <emphasis>2</emphasis>, ask him why he’s with Grey Korea.",
 
-	fallback12 : "Say, <emphasis>1</emphasis>, to tell him Yawnkay is dead, or, <emphasis>2</emphasis>, to ask him why he’s with Grey Korea.",
-
+	repromptText12 : "Say, <emphasis>1</emphasis>, to tell him Yawnkay is dead, or, <emphasis>2</emphasis>, to ask him why he’s with Grey Korea.",
 
    text13 : "You knock on the door because you’re not some creeper who goes around barging into people’s houses. \
 The door swings open with the force of your knock, but no one comes to greet you. You knock again, this time harder. \
@@ -284,9 +283,9 @@ He leads you to an open living room with wide windows displaying a gorgeous city
  'About Yawnkay,' you say. \
  'No. This is really important,' you say. \
 You have a feeling the next thing you say could be significant. What should it be? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask Bob what he’s in the middle of, or, <emphasis>2</emphasis>, tell him Yawnkay’s dead."
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask Bob what he’s in the middle of, or, <emphasis>2</emphasis>, tell him Yawnkay’s dead.",
 
-	fallback13 : "Say, <emphasis>1</emphasis>, to ask Bob what he’s in the middle of, or, <emphasis>2</emphasis>, to tell him Yawnkay’s dead.",
+	repromptText13 : "Say, <emphasis>1</emphasis>, to ask Bob what he’s in the middle of, or, <emphasis>2</emphasis>, to tell him Yawnkay’s dead.",
 
     text14 : "You’re embarrassed to be standing in the doorway, only a thin sheet between the disrobed pair and yourself. \
 Grey Korea looks bored with the entire situation. \
@@ -302,9 +301,9 @@ Bob sits up further. The comforter is dangerously close to revealing more than y
  'I plan to find the murderer,' you say. \
 You raise an eyebrow. \
 You’re not prepared to make any accusations yet, but you do have a few more questions. \
-What to ask, though? <break time='.5s'/>Should you, <emphasis>1</emphasis>, ask him what he’s doing in New York, or, <emphasis>2</emphasis>, ask him why he’s with Grey Korea."
+What to ask, though? <break time='.5s'/>Should you, <emphasis>1</emphasis>, ask him what he’s doing in New York, or, <emphasis>2</emphasis>, ask him why he’s with Grey Korea.",
 
-	fallback14 : "Say, <emphasis>1</emphasis>, to ask him what he’s doing in New York, or, <emphasis>2</emphasis>, to ask him why he’s with Grey Korea.",
+	repromptText14 : "Say, <emphasis>1</emphasis>, to ask him what he’s doing in New York, or, <emphasis>2</emphasis>, to ask him why he’s with Grey Korea.",
 
    text14b : "'Yawnkay is dead,' you blurt out. \
  'He’s dead. Yawnkay’s dead,' you say. 'I found him in bed this morning.' \
@@ -315,11 +314,11 @@ Bob gasps. \
  'I plan to find the murderer,' you say. \
 You raise an eyebrow. \
 You’re not prepared to make any accusations yet, but you do have a few more questions. What to ask? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask him what he’s doing in New York, or, <emphasis>2</emphasis>, ask what’s with him and Grey Korea."
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask him what he’s doing in New York, or, <emphasis>2</emphasis>, ask what’s with him and Grey Korea.",
 
-	fallback14b : "Say, <emphasis>1</emphasis>, to ask him what he’s doing in New York, or, <emphasis>2</emphasis>, to ask what’s with him and Grey Korea.",
+	repromptText14b : "Say, <emphasis>1</emphasis>, to ask him what he’s doing in New York, or, <emphasis>2</emphasis>, to ask what’s with him and Grey Korea.",
 
-   text15 : "'What are you doing with Grey Korea?' you ask. \
+   	text15 : "'What are you doing with Grey Korea?' you ask. \
 Bob may be a noted uh gore uh phobe and manklet designer, but he’s less impressive in person than on TV. \
 'Yawnkay sent me,' you say, not wanting to give away why you’re really here. \
 Bob doesn’t seem to be surprised that Yawnkay sent you, which would indicate Bob truly doesn’t know that Yawnkay’s dead. \
@@ -328,11 +327,11 @@ Ha! Unlikely. \
 'He knows you were at his place last night,' you say, hoping to catch him off guard. \
 Grey Korea covers Bob’s mouth with her hand and turns to you. \
 Ohh! It seems like you’ve hit on something. The next question you ask could be critical. \
-<break time='.5s'/>What to say? You can, <emphasis>1</emphasis>, ask Bob what he knows about Yawnkay’s death, or, <emphasis>2</emphasis>, ask Bob why he’s in New York."
+<break time='.5s'/>What to say? You can, <emphasis>1</emphasis>, ask Bob what he knows about Yawnkay’s death, or, <emphasis>2</emphasis>, ask Bob why he’s in New York.",
 
-	fallback15 : "Say, <emphasis>1</emphasis>, to ask Bob what he knows about Yawnkay’s death, or, <emphasis>2</emphasis>, to ask Bob why he’s in New York.",
+	repromptText15 : "Say, <emphasis>1</emphasis>, to ask Bob what he knows about Yawnkay’s death, or, <emphasis>2</emphasis>, to ask Bob why he’s in New York.",
 
-   text15b : "'What are you in the middle of?' you ask. \
+   	text15b : "'What are you in the middle of?' you ask. \
  'Tweeting about Grey Korea?' you ask. 'Calling her dirt for the twelfth time?' \
 He sounds genuinely upset. In fact, this is the first time you’ve noticed any real emotion out of him. \
 'What’s the big deal?' you ask. 'Weren’t you burning her on twitter, like, ten minutes ago?' \
@@ -344,11 +343,11 @@ Ha! Unlikely. \
 'He knows you were at his place last night,' you say, hoping to catch him off guard. \
 He stops himself. \
 Ohh! It seems like you’ve hit on something. The next question you ask could be critical. \
-<break time='.5s'/>What to say? You can, <emphasis>1</emphasis>, ask Bob what he knows about Yawnkay’s death, or, <emphasis>2</emphasis>, ask Bob why he’s in New York."
+<break time='.5s'/>What to say? You can, <emphasis>1</emphasis>, ask Bob what he knows about Yawnkay’s death, or, <emphasis>2</emphasis>, ask Bob why he’s in New York.",
 
-	fallback15b : "Say, <emphasis>1</emphasis>, to ask Bob what he knows about Yawnkay’s death, or, <emphasis>2</emphasis>, to ask Bob why he’s in New York.",
+	repromptText15b : "Say, <emphasis>1</emphasis>, to ask Bob what he knows about Yawnkay’s death, or, <emphasis>2</emphasis>, to ask Bob why he’s in New York.",
 
-  text16 : "'What are you doing in New York?' you ask. \
+  	text16 : "'What are you doing in New York?' you ask. \
  'Look,' you say. 'It’s either my business or the cops’ business.' \
 He has you there, so you change strategy and say, 'If you didn’t do it, then what’s the big deal telling me?' \
  'Yeah, I heard,' you say. \
@@ -363,11 +362,11 @@ Could she have finally gotten sick of their nonsense and killed him? \
 'What does Tangerine Tulip have to do with this?' you ask. \
 Korea shoots Bob a fierce side-eye. \
 Hmm, looking into Tangerine Tulip does make sense, but maybe he’s trying to misdirect you. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead."
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead.",
 
-	fallback16 : "Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
+	repromptText16 : "Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
 
-  text16b : "'What are you doing in New York?' you ask. \
+  	text16b : "'What are you doing in New York?' you ask. \
  'Look,' you say. 'It’s either my business or the cops’ business.' \
 He has you there, so you change strategy and say, 'If you didn’t do it, then what’s the big deal telling me?' \
  'Yeah, I heard,' you say. \
@@ -381,7 +380,9 @@ Tangerine is Yawnkay East’s most high profile ex. \
 Like everyone else connected to this family, she is known primarily for her large butt and sex tape. For some reason, though, the Mays think this makes Tangerine Tulip dirt, while the members of <emphasis>their</emphasis> family are savvy businesswomen. \
 'What does Tangerine Tulip have to do with this?' you ask. \
 Hmm, looking into Tangerine Tulip does make sense, but maybe he’s trying to misdirect you. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead.",
+
+	repromptText16b :"Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
 
    text17 : "'What are you doing with Grey Korea?' you ask. \
  'Look,' you say. 'It’s either my business or the cops’ business.' \
@@ -398,7 +399,9 @@ Could she have finally gotten sick of their nonsense and killed him? \
 'What does Tangerine Tulip have to do with this?' you ask. \
 Korea shoots him a fierce side-eye. \
 Hmm, looking into Tangerine Tulip does make sense, but maybe he’s trying to misdirect you. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead.",
+
+	repromptText17: "Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
 
   text17b : "'What’s with you and Grey Korea?' you ask. \
 His blow up with her might be an elaborate ruse to cover his tracks. Or, well, it could be if Bob were smart enough to come up with such a plan. \
@@ -416,7 +419,9 @@ Tangerine is Yawnkay East’s most high profile ex. \
 Like everyone else connected to this family, she is known primarily for her large butt and sex tape. For some reason, though, the Mays think this makes Tangerine Tulip dirt, while the members of <emphasis>their</emphasis> family are savvy businesswomen. \
 'What does Tangerine Tulip have to do with this?' you ask. \
 Hmm, looking into Tangerine Tulip does make sense, but maybe he’s trying to misdirect you. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead.", 
+
+	repromptText17b:"Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
 
    text18 : "You realize it would be investigatory malpractice to start making accusations without following up on this Tangerine Tulip lead, so you ask Bob to give you the address of where she’s staying. \
 It turns out she’s not too far from where you are currently. Why the heck is everyone connected to Yawnkay here in New York? These people need to stay in L.A. \
@@ -430,7 +435,9 @@ For a split second, you’re worried he’ll lunge at you, but instead, he retur
 The man hesitates for a moment, then jumps over Tangerine, running for a window that leads out to a fire escape. You don’t know who this man is or what this fight was about, but you do know that he’s trying to get away. \
 Maybe you should stop him. \
 Although, when you look down at Tangerine, blood is pouring from her face. Maybe the better thing to do would be to help her. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, run after the bad guy, or, <emphasis>2</emphasis>, help Tangerine Tulip. Say, <emphasis>1</emphasis>, to run after the bad guy, or, <emphasis>2</emphasis>, to help Tangerine Tulip.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, run after the bad guy, or, <emphasis>2</emphasis>, help Tangerine Tulip.",
+
+	repromptText18: "Say, <emphasis>1</emphasis>, to run after the bad guy, or, <emphasis>2</emphasis>, to help Tangerine Tulip.",
 
    text19 : "'Tell me what you know about Yawnkay’s death,' you say. \
 'Well, I lied,' you say. You’re pretty sure in that one paralegal class you took, they said that lying is a large part of all good detective work. \
@@ -441,7 +448,9 @@ Tangerine is Yawnkay East’s most high profile ex. \
 Like everyone else connected to this family, she is known primarily for her large butt and sex tape. For some reason, though, the Mays think this makes Tangerine Tulip dirt, while the members of <emphasis>their</emphasis> family are savvy businesswomen. \
 Could she have finally gotten sick of their nonsense and killed him? \
 Hmm, looking into Tangerine Tulip does make sense, but maybe they’re trying to misdirect you. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead.",
+
+	repromptText19: "Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
 
    text19b : "'Tell me what you know about Yawnkay’s death,' you say \
  'Well, I lied,' you say. You’re pretty sure in that one paralegal class you took, they said that lying is a large part of all good detective work. \
@@ -454,7 +463,9 @@ Tangerine is Yawnkay East’s most high profile ex. \
 Like everyone else connected to this family, she is known primarily for her large butt and sex tape. For some reason, though, the Mays think this makes Tangerine Tulip dirt, while the members of their family are savvy businesswomen. \
 'What does Tangerine Tulip have to do with this?' you ask. \
 Hmm, looking into Tangerine Tulip does make sense, but maybe he’s trying to misdirect you. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead.",
+
+	repromptText19b: "Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
 
    text20 : "'What are you doing in New York?' you ask. \
  'Yeah. I heard,' you say. \
@@ -467,7 +478,9 @@ Tangerine is Yawnkay East’s most high profile ex. \
 Like everyone else connected to this family, she is known primarily for her large butt and sex tape. For some reason, though, the Mays think this makes Tangerine Tulip dirt, while the members of <emphasis>their</emphasis> family are savvy businesswomen. \
 Could she have finally gotten sick of their nonsense and killed him? \
 Hmm, looking into Tangerine Tulip does make sense, but maybe they’re trying to misdirect you. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead.",
+
+ 	repromptText20: "Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
 
    text20b : "'What are you doing in New York?' you ask. \
  'Yeah. I heard, but what does this have to do with Yawnkay?' you ask. \
@@ -477,7 +490,9 @@ Tangerine is Yawnkay East’s most high profile ex. \
 Like everyone else connected to this family, she is known primarily for her large butt and sex tape. For some reason, though, the Mays think this makes Tangerine Tulip dirt, while the members of <emphasis>their</emphasis> family are savvy businesswomen. \
 'What does Tangerine Tulip have to do with this?' you ask. \
 Hmm, looking into Tangerine Tulip does make sense, but maybe he’s trying to misdirect you. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, find Tangerine Tulip, or, <emphasis>2</emphasis>, forget about that lead.", 
+
+	repromptText20b: "Say, <emphasis>1</emphasis>, to find Tangerine Tulip, or, <emphasis>2</emphasis>, to forget about that lead.",
 
    text21 : "You scrutinize Tangerine for a second longer and judge that she’s not in any immediate peril of dying. Right now the important thing is to stop this disgusting man. \
 You gotta go after him because, first, who kicks a person in the face? And, second, maybe he knows something about Yawnkay’s death. \
@@ -486,7 +501,9 @@ You run out the window and realize that the guy is already down half a flight of
 Thank goodness Yawnkay insists that all of his assistants do at least two hours of cardio each day plus lift weights, and he’s a stickler for never skipping leg day. \
 The man makes it to the bottom of the stairs, jumping half a story to the ground, but you’re right on his heels. He heads for a van parked on the side of the building, running around to the driver side and jumping in. \
 Crap, he’s going to get away. You have to do something, but what? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, jump in front of the van, or, <emphasis>2</emphasis>, climb into the empty passenger side. Say, <emphasis>1</emphasis>, to jump in front of the van, or, <emphasis>2</emphasis>, to climb into the empty passenger side.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, jump in front of the van, or, <emphasis>2</emphasis>, climb into the empty passenger side.",
+
+	repromptText21: "Say, <emphasis>1</emphasis>, to jump in front of the van, or, <emphasis>2</emphasis>, to climb into the empty passenger side.",
 
    text22 : "You run over to Tangerine Tulip and kneel down beside her. \
 The man slips out the window and is gone. \
@@ -497,7 +514,9 @@ A torrent of blood pours from Tangerine’s nose in answer. \
 Hey, you think. This might be a good time to go sneaking around Tangerine’s place. Maybe there are some clues here. \
 But would that make you a horrible person, another part of you counters. \
 <break time:'.4s'/>What a weird day. Every time something happens, you have two opposite thoughts about what you could do in response. You’re not sure you’ve ever given so much thought to your decisions. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, poke around the place, or, <emphasis>2</emphasis>, get a towel for Tangerine. Say, <emphasis>1</emphasis>, to poke around the place, or, <emphasis>2</emphasis>, to get a towel for Tangerine.", 
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, poke around the place, or, <emphasis>2</emphasis>, get a towel for Tangerine.", 
+
+	repromptText22: "Say, <emphasis>1</emphasis>, to poke around the place, or, <emphasis>2</emphasis>, to get a towel for Tangerine.", 
 
    text23 : "You think fast and jump in front of the van to keep the guy from driving off. \
 You haven’t really thought through what you’ll do after that—call the police maybe?—but before you have an opportunity to consider it further, the man guns it. \
@@ -519,7 +538,9 @@ You grab at the door handle, trying to open it, but you’re stuck. \
 You think about hitting the man, and almost as if he heard your thoughts he says, \
 He pats his hip. \
 Whoa. This guy doesn’t mess around. What should you do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, punch him, or, <emphasis>2</emphasis>, ask him why he kicked Tangerine Tulip. Say, <emphasis>1</emphasis>, to punch him, or, <emphasis>2</emphasis>, to ask him why he kicked Tangerine Tulip.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, punch him, or, <emphasis>2</emphasis>, ask him why he kicked Tangerine Tulip.",
+
+	repromptText24 :"Say, <emphasis>1</emphasis>, to punch him, or, <emphasis>2</emphasis>, to ask him why he kicked Tangerine Tulip.",
 
    text25 : "Sure he made it perfectly clear that if you moved at him, he’d shoot you dead, but what the heck? It’s not like your life is on the line. \
 Wait? What’s that? This is precisely the definition of you life being on the line? \
@@ -539,7 +560,9 @@ You figure body person sounds a lot cooler than personal assistant. Personal ass
 What?! \
 Sure he kicked Tangerine Tulip in the face, but if you had known this man was a cold-blooded killer, you never would’ve jumped in this van. You might want to discover the identity of Yawnkay East’s murderer, but that doesn’t mean you’re willing to give up your life. \
 How are you going to get out of this mess? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, calmly explain why the man shouldn’t murder you, or, <emphasis>2</emphasis>, start crying hysterically. Say, <emphasis>1</emphasis>, to calmly explain, or, <emphasis>2</emphasis>, to cry hysterically.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, calmly explain why the man shouldn’t murder you, or, <emphasis>2</emphasis>, start crying hysterically.",
+
+	repromptText26: "Say, <emphasis>1</emphasis>, to calmly explain, or, <emphasis>2</emphasis>, to cry hysterically.",
 
    text27 : "Now is not the time to panic, you think. This guy seems rational to you. There must be a way to convince him not to murder you. \
 'Look sir,' you begin, 'there’s got to be a way we can work this out.' \
@@ -563,8 +586,7 @@ You’re still crying, but you see an opening, and say, 'Yeah. And I thought Tan
 'So what’s all this about then?' you ask, your sobs subsiding to sniffles. \
 Hmm, so that would seem to suggest neither Tangerine Tulip nor Grey Korea are the murderers. And probably not Bob either. \
 Or at least, that is, if this guy can be trusted. \
-A few minutes later, the man lets you out of the van. As he pulls away you think, that certainly could have gone a lot worse. \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+A few minutes later, the man lets you out of the van. As he pulls away you think, that certainly could have gone a lot worse.",
 
    text29 : "You decide to honor Yawnkay’s memory by not only doing the selfish thing, but also the thing that has the bonus of harming his ex—you’re going to take this opportunity to poke around Tangerine’s place. \
 You walk further into the apartment until you find a bedroom. In it are four large suitcases. These must be Tangerine’s you think obviously. \
@@ -573,14 +595,18 @@ Jeez, you think. How long was she planning on staying here? You move to the next
 'Oof,' you groan. \
 You spin around and Tangerine stands before you. Blood covers her face and she looks like even more of a horror show than usual. \
 She swings her arm back for a second blow and you know you’re going to have to act fast. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, reason with her, or, <emphasis>2</emphasis>, fight. Say, <emphasis>1</emphasis>, to reason with her, or, <emphasis>2</emphasis>, to fight.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, reason with her, or, <emphasis>2</emphasis>, fight.", 
+
+	repromptText29: "Say, <emphasis>1</emphasis>, to reason with her, or, <emphasis>2</emphasis>, to fight.",
 
    text30 : "Yawnkay’s renowned selfishness is most certainly what got him killed, so maybe you should do the right thing and actually help out Tangerine Tulip. \
 You spot a bathroom, wet a washcloth, and grab a few wads of toilet paper. You run back to Tangerine and help her to a sitting position. \
 She takes the toilet paper from you and stuffs it into her still-bleeding nose. \
 She wipes her face with the washcloth until she’s recognizable again. You’re sure that within an hour or two she’s going to have a very swollen nose and two black eyes. \
 She places her hand on the side of her head like she’s feeling woozy. She squints at you. Oh crap, what should you say? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell her the truth, or, <emphasis>2</emphasis>, lie. Say, <emphasis>1</emphasis>, to tell her the truth, or, <emphasis>2</emphasis>, to lie.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell her the truth, or, <emphasis>2</emphasis>, lie.",  
+
+	repromptText30: "Say, <emphasis>1</emphasis>, to tell her the truth, or, <emphasis>2</emphasis>, to lie.",
 
    text31 : "'I’m Yawnkay’s assistant,' you say. You figure you’ve been doing the right thing up to this point. Might as well maintain your character. \
 She starts crying, tears streaming down her cheeks. \
@@ -595,8 +621,7 @@ She cuts you off. \
 'Were you at Yawnkay’s house last night?' you ask. \
  'You don’t have to,' you say, 'but if you’re innocent, I’d assume you’d want to.' \
  'Interesting you mention that,' you say. \
- What to do now?  \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+ What to do now?",
 
 
    text32 : "'I’m from UPS,' you sputter, not thinking of anything better on the fly. 'I need you to sign for a package.' \
@@ -605,8 +630,7 @@ You look around. 'Oh, good point,' you say. 'I must’ve left it down in the tru
  'Who’s going to make me?' you say. \
 She stands up and hops up and down a few times like she’s ready to fight. It’s amazing she’s able to do that given how much blood she’s already lost. \
 Yawnkay might have insisted on a lot of cardio and weightlifting, but unfortunately he never added kickboxing into the mix. You better leave now before she truly threatens you. \
-What to do now?  \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+What to do now?",
 
    text33 : "When life presents you with the opportunity to fight Tangerine Tulip, apparently you decline? \
 You duck under her swing and stagger backward. \
@@ -624,8 +648,7 @@ She cuts you off. \
 'Were you at Yawnkay’s house last night?' \
  'You don’t have to,' you say, 'but if you’re innocent, I’d assume you’d want to.' \
  'Interesting you mention that,' you say. \
- What to do now?  \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+ What to do now?",
 
    text34 : "When life presents you with the opportunity to fight Tangerine Tulip, you take it. \
 You duck under her swing and punch her with all of your force square in the boob. \
@@ -639,8 +662,7 @@ You take two fingers and try to stab her in the eyes, Three Stooges-style. Thank
 She falls backward off of you, then pushes herself up and runs out of the room. \
 'Tangerine!' you yell. 'Tangerine!' \
 Well, it seems you got very little in the way of information out of this visit, but you did get to punch Tangerine Tulip in the boob, so you’ll chalk this one up as a victory. \
-What to do now?  \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+What to do now?",
 
    text35 : "You walk up to the tenth floor and knock on Christy Benner’s door. \
 You wonder who she’s expecting. The door opens and her expression changes from excitement to annoyance. \
@@ -653,8 +675,7 @@ Christy looks around nervously. \
 'Why are you in town anyway?' you ask \
  'What are you trying to hide?' you ask \
 She slams the door in your face. \
-Well, that could have gone better. What to do now? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+Well, that could have gone better. What to do now?",
 
    text36 : "Working and living among this family for the past two years, you’ve learned that the best way to handle them is never directly. Going up to the room and knocking on Christy’s door is definitely a bad idea. \
 But how to be sneaky? \
@@ -662,7 +683,9 @@ You have no particular skills to break into her suite, and even if you did, if s
 You sit down on one of the hotel’s plush couches to think. There has to be some way to get into her suite without her realizing who you are. \
 Thankfully Christy is never one to notice the help, so you’re pretty sure if she sees you, she won’t remember you work for Yawnkay. \
 Then it dawns on you. Your next move should be to: \
-<break time='.5s'/>Do you, <emphasis>1</emphasis>, hide in a room service cart, or, <emphasis>2</emphasis>, pretend to be someone from Mimm’s employees. Say, <emphasis>1</emphasis>, to hide in a room service cart, or, <emphasis>2</emphasis>, to pretend to be someone from Mimm’s employees.",
+<break time='.5s'/>Do you, <emphasis>1</emphasis>, hide in a room service cart, or, <emphasis>2</emphasis>, pretend to be someone from Mimm’s employees.", 
+
+	repromptText36:"Say, <emphasis>1</emphasis>, to hide in a room service cart, or, <emphasis>2</emphasis>, to pretend to be someone from Mimm’s employees.",
 
    text37 : "Hide in the room service cart! That’s what people in the movies do. \
 You pick up a courtesy phone and call the number for room service. You place an order for two salads, no gluten, no dairy, no nuts, and dressing and lettuce on the side. \
@@ -674,7 +697,9 @@ It can’t be. \
 But it is. \
 It’s Yawnkay’s bodyguard. \
 Is he here to tell Christy that Yawnkay is dead? He could ruin everything! What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, stop him, or, <emphasis>2</emphasis>, keep hiding and wait for the room service cart. Say, <emphasis>1</emphasis>, to stop him, or, <emphasis>2</emphasis>, to keep hiding.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, stop him, or, <emphasis>2</emphasis>, keep hiding and wait for the room service cart.",
+
+	repromptText37: "Say, <emphasis>1</emphasis>, to stop him, or, <emphasis>2</emphasis>, to keep hiding.",
 
    text38 : "You remember that you saw on Instagram that Christy’s daughter Mimm was in Calabasas last night. You could call up to Christy’s room and pretend to be one of the employees of Mimm’s store CASH. \
 Brilliant! \
@@ -684,7 +709,9 @@ You walk over to one of the hotel’s courtesy phones and dial Christy’s exten
 Christy pauses for a long moment. \
 You take the elevator up to Christy’s floor and when you get to the door, she opens it before you have a chance to knock. \
 You walk into the suite. She closes the door behind you and stands in front of it. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell Christy the truth, or, <emphasis>2</emphasis>, keep going with the lie. Say, <emphasis>1</emphasis>, to tell Christy the truth, or, <emphasis>2</emphasis>, to keep going with the lie.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell Christy the truth, or, <emphasis>2</emphasis>, keep going with the lie.",
+
+	repromptText38: "Say, <emphasis>1</emphasis>, to tell Christy the truth, or, <emphasis>2</emphasis>, to keep going with the lie.",
 
    text39 : 
 "Look, I had to tell you that so you’d let me come up here,' you say, 'but I’m actually Yawnkay’s assistant. And I came to tell you,' you take in a deep breath, 'that he’s been murdered.' \
@@ -696,7 +723,9 @@ Wait, what? \
 New Jersey? \
 But she posted on Instagram to make it look like she was in Calabasas. There’s definitely something fishy going on here. \
 What should you ask next? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask why Mimm May is in New Jersey, or, <emphasis>2</emphasis>, ask why Christy’s in town. Say, <emphasis>1</emphasis>, to ask about Mimm May, or, <emphasis>2</emphasis>, to ask about Christy.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask why Mimm May is in New Jersey, or, <emphasis>2</emphasis>, ask why Christy’s in town.", 
+
+	repromptText39: "Say, <emphasis>1</emphasis>, to ask about Mimm May, or, <emphasis>2</emphasis>, to ask about Christy.",
 
    text40 : "I swear,' you say, 'I work at CASH. We had an emergency and Mimm said—' \
 Christy cuts you off. \
@@ -708,7 +737,9 @@ Wait, what? \
 New Jersey? \
 But she posted on Instagram to make it look like she was in Calabasas. There’s definitely something fishy going on here. \
 What should you ask next? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask why Mimm May is in New Jersey, or, <emphasis>2</emphasis>, ask why Christy’s in town. Say, <emphasis>1</emphasis>, to ask about Mimm May, or, <emphasis>2</emphasis>, to ask about Christy.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask why Mimm May is in New Jersey, or, <emphasis>2</emphasis>, ask why Christy’s in town.", 
+
+	repromptText40: "Say, <emphasis>1</emphasis>, to ask about Mimm May, or, <emphasis>2</emphasis>, to ask about Christy.",
 
    text41 : "But Mimm’s Instagram post from last night said she was in Calabasas,' you say. \
  'Fine,' you say, 'you’re right. I’m Yawnkay’s assistant.' \
@@ -719,15 +750,19 @@ Christy’s mouth drops open. \
 'Like you don’t know,' you say. 'You basically just admitted you had Mimm kill him.' \
  'If that’s the case,' you say, 'then tell me everything you know about why Mimm is on the east coast.' \
 This is definitely a hot lead. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead. ",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead.", 
+
+	repromptText41: "Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead. ",
 
    text41b : "But Mimm’s Instagram post from last night said she was in Calabasas,' you say. \
  'Or she didn’t want the police to know,' you retort. \
 This is definitely a hot lead. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead.", 
+	
+	repromptText41b: "Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead.",
 
 
-   42 : "What are you doing in New York City anyway?' you ask. \
+   text42 : "What are you doing in New York City anyway?' you ask. \
  'Likely story,' you say. \
 You decide that if you’re going to move this along, you’re going to have to be honest. \
 'I’m Yawnkay’s assistant,' you say. \
@@ -738,13 +773,17 @@ Christy’s mouth drops open. \
 'Like you don’t know,' you say. 'You basically just admitted you had Mimm kill him.' \
  'If that’s the case,' you say, 'then why the heck are you in New York?' \
 This is definitely a hot lead. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead.", 
+
+	repromptText42: "Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead.",
 
    text42b : "What are you doing in New York City anyway?' you ask. \
  'Likely story,' you say. \
  'It is rather suspicious,' you say, 'that you and Mimm are both in the area the night Yawnkay dies.' \
 This is definitely a hot lead. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead.", 
+
+	repromptText42b: "Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead.",
 
    text43 : "You gotta stop him. He could ruin everything. \
 You run at top speed and put yourself between him and the door just before he knocks. \
@@ -755,12 +794,16 @@ The bodyguard looks around nervously for a moment, then turns around and walks b
 You return to your hiding spot to wait for the room service cart. \
 A few moments later, the room service waiter exits the elevator pushing the cart. Now’s your chance. \
 Although, you never did plan out how to get into the cart. What should you do? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, distract him, or, <emphasis>2</emphasis>, bribe him. Say, <emphasis>1</emphasis>, to distract him, or, <emphasis>2</emphasis>, to bribe him.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, distract him, or, <emphasis>2</emphasis>, bribe him.", 
+
+	repromptText43: "Say, <emphasis>1</emphasis>, to distract him, or, <emphasis>2</emphasis>, to bribe him.",
 
    text44 : "If you show yourself now, you might lose your chance, so you stay hidden. \
 The bodyguard knocks on Christy’s door, and she lets him inside. \
 A few moments later, the room service waiter comes out of the elevator pushing the cart. Now’s your chance. Although, you never did plan out how to get into the cart. What should you do? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, distract him, or, <emphasis>2</emphasis>, bribe him. Say, <emphasis>1</emphasis>, to distract him, or, <emphasis>2</emphasis>, to bribe him.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, distract him, or, <emphasis>2</emphasis>, bribe him.", 
+
+	repromptText44: "Say, <emphasis>1</emphasis>, to distract him, or, <emphasis>2</emphasis>, to bribe him.",
 
    text45 : "If you’re going to get in that cart, you’re going to have to distract him. You run over to the room service waiter and say, 'Hey, I think a guy over there stole one of your tiny glass bottles of ketchup!' \
 The waiter, looking shocked, lets go of the cart, and runs back down the hall. \
@@ -780,7 +823,9 @@ Wait, what? \
 New Jersey? \
 But she posted on Instagram to make it look like she was in Calabasas. There’s definitely something fishy going on here. \
 What should you ask next? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask why Mimm May is in New Jersey, or, <emphasis>2</emphasis>, ask why Christy’s in town. Say, <emphasis>1</emphasis>, to ask about Mimm May, or, <emphasis>2</emphasis>, to ask about Christy.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask why Mimm May is in New Jersey, or, <emphasis>2</emphasis>, ask why Christy’s in town.", 
+
+	repromptText45: "Say, <emphasis>1</emphasis>, to ask about Mimm May, or, <emphasis>2</emphasis>, to ask about Christy.",
 
 
   text45b : "If you’re going to get on that cart, you’re going to have to distract him. You run over to the room service waiter and say, 'Hey, I think a guy over there stole one of your tiny glass bottles of ketchup!' \
@@ -797,7 +842,9 @@ You better stop him before he tells her too much. You burst through the door and
 The sound of you bounding into the room startles them, and he jumps off of her. Thankfully you got here quickly enough that all of their clothing was still on. What a relief! \
 The bodyguard looks you up and down. \
 Who does this guy think he is? You’re the one asking the questions. Although, now that you think of it, which one? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask the bodyguard why he’s not at Yawnkay’s house, or, <emphasis>2</emphasis>, ask them how they could be hooking up at a time like this. Say, <emphasis>1</emphasis>, to ask the bodyguard why he’s not at Yawnkay’s, or, <emphasis>2</emphasis>, to ask them how they could be hooking up.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask the bodyguard why he’s not at Yawnkay’s house, or, <emphasis>2</emphasis>, ask them how they could be hooking up at a time like this.", 
+
+	repromptText45b: "Say, <emphasis>1</emphasis>, to ask the bodyguard why he’s not at Yawnkay’s, or, <emphasis>2</emphasis>, to ask them how they could be hooking up.",
 
    text46 : "What always works for Yawnkay? Money. \
 You gotta bribe him. \
@@ -821,7 +868,7 @@ But then the meds kick in, and this major plot hole of your life stops bothering
 'I came to give the news to Christy myself.' He sits down on the bed. 'Look, Yankay didn’t know this, but Christy and I have developed a bit of a relationship over the last year. We’ve gotten close.' \
 'I can see that. It certainly doesn’t seem like either of you are too broken up about Yankay’s death,' you say. \
 'In times of sadness I get really aroused. Not that it’s any of your business. Who are you anyway?' \
-'I’m Yankay’s assistant,' you say, 'and I’m investigating his murder. Where were you last night?' \ 
+'I’m Yankay’s assistant' you say, 'and I’m investigating his murder. Where were you last night?' \ 
 Christy’s eyes widen. 'Are you trying to suggest I killed Yankay? I’d never!' \
 'She didn’t do it.' \
 'And how would you know?' you ask. \
@@ -833,7 +880,9 @@ The plot thickens. \
 'Or she didn’t want the police to know,' you retort. \
 'No, no. I’m the one who talked her into coming. I swear it had nothing to do with Yankay, but Mim needs to know her husband is dead. I’ll give you the address for where she’s at and you can tell her. I hate delivering bad news. Unless it’s televised.' \
 This is definitely a hot lead, but you could always investigate someone else in the family or you could even throw caution to the wind and start making, frankly, baseless accusations. What to do now?\
-<break time='.5s'/>Should you, emphasis>1</emphasis>, talk to Mim May, or, <emphasis>2</emphasis>, forget about that lead. Say, 1, to talk to Mim May, or, 2, to forget about that lead.",
+<break time='.5s'/>Should you, emphasis>1</emphasis>, talk to Mim May, or, <emphasis>2</emphasis>, forget about that lead.", 
+
+	repromptText47a: "Say, 1, to talk to Mim May, or, 2, to forget about that lead.",
 
 
    text47b : "How could you be having sex at a time like this?' you yell. \
@@ -847,7 +896,9 @@ The plot thickens. \
  'How could I have?' you ask. 'Mimm’s Instagram post from last night said she was in Calabasas.' \
 'Or she didn’t want the police to know,' you retort. \
 This is definitely a hot lead. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Mimm May, or, <emphasis>2</emphasis>, forget about that lead.", 
+
+	repromptText47b: "Say, <emphasis>1</emphasis>, to talk to Mimm May, or, <emphasis>2</emphasis>, to forget about that lead.",
 
 	text48: "You take yet another Lyft, this one across the Hudson, to the address given to you by Christy Benner. Of all of the crazy things that have happened today, learning that Mimm May agreed to enter New Jersey has to be the most shocking. \
 What in the world could she do in New Jersey that she couldn’t do more expensively in New York? The mind boggles. \
@@ -855,7 +906,9 @@ The car pulls up in front of a non-descript wedding dress shop on a sleepy stree
 You walk into the store and are met by a young man with long-ish, dark hair swooped to the side. He’s dressed all in black. \
 This guy definitely looks familiar, but you can’t quite place it. You look around and don’t see Mimm anywhere. \
 What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask for Mimm May, or, <emphasis>2</emphasis>, ask this guy who he is. Say, <emphasis>1</emphasis>, to ask for Mimm May, or, <emphasis>2</emphasis>, to ask this guy who he is.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask for Mimm May, or, <emphasis>2</emphasis>, ask this guy who he is.", 
+
+	repromptText48: "Say, <emphasis>1</emphasis>, to ask for Mimm May, or, <emphasis>2</emphasis>, to ask this guy who he is.",
 
 	text49b: "'Don’t I know you?' you ask the man. \
 He faux-blushes. \
@@ -871,7 +924,9 @@ Mimm appears from behind a curtain. She’s wearing a fitted floral print dress 
 Immediately you’re struck by her hair. Like, you literally feel assaulted by it. \
 It’s curled and teased like an abomination straight out of Designing Women. What is going on here? Is she having some sort of serious nervous breakdown? Is that why she killed Yawnkay? \
 What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her about her hair, or, <emphasis>2</emphasis>, tell her Yawnkay is dead. Say, <emphasis>1</emphasis>, to ask her about her hair, or, <emphasis>2</emphasis>, to tell her Yawnkay is dead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her about her hair, or, <emphasis>2</emphasis>, tell her Yawnkay is dead.", 
+
+	repromptText49b: "Say, <emphasis>1</emphasis>, to ask her about her hair, or, <emphasis>2</emphasis>, to tell her Yawnkay is dead.",
 
 	text49a : "You tell him, 'I need to speak to Mimm May,' not really caring who this guy is. \
  'Sorry,' you say. 'But it’s really important.' \
@@ -883,8 +938,9 @@ Mimm appears from behind a curtain. She’s wearing a fitted floral print dress 
 Immediately you’re struck by her hair. Like, you literally feel assaulted by it. \
 It’s curled and teased like an abomination straight out of Designing Women. What is going on here? Is she having some sort of serious nervous breakdown? Is that why she killed Yawnkay? \
 What to do now?  \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her about her hair, or, <emphasis>2</emphasis>, tell her Yawnkay is dead. Say, <emphasis>1</emphasis>, to ask her about her hair, or, <emphasis>2</emphasis>, to tell her Yawnkay is dead.",
-,
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her about her hair, or, <emphasis>2</emphasis>, tell her Yawnkay is dead.", 
+
+	repromptText49a: "Say, <emphasis>1</emphasis>, to ask her about her hair, or, <emphasis>2</emphasis>, to tell her Yawnkay is dead.",
 
 	text50 : "Mimm was always much nicer to you than Christy. She gets a lot of crap in the media, but she really isn’t all bad. \
  'Yeah, I am, but what’s with your hair?' you blurt out. It’s really distracting. \
@@ -895,7 +951,8 @@ Mimm gasps and sinks down in a chaise behind her. Tears stream down her face. \
 'I—I mean,' you stutter. 'I was just—' \
 She interrupts you. \
 'But I—' you begin, but Sikh Meriano comes up behind you and grabs you by the arm. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, resist him, or, <emphasis>2</emphasis>, get out of there. Say, <emphasis>1</emphasis>, to resist him, or, <emphasis>2</emphasis>, to get out of there.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, resist him, or, <emphasis>2</emphasis>, get out of there.", 
+	repromptText50: "Say, <emphasis>1</emphasis>, to resist him, or, <emphasis>2</emphasis>, to get out of there.",
 
 	text51 : "Mimm was always much nicer to you than Christy. She gets a lot of crap in the media, but she really isn’t all bad. \
 'Yeah,' you say. 'I don’t know how to tell you this, but Yawnkay is dead. I found him this morning.' \
@@ -904,13 +961,17 @@ It dawns on you that Mimm is the first person to ask you this question. 'Pills. 
  'Well, yes that,' you say. 'And also because today was white food day.' \
 She puts her head in her hands and starts to cry. Her ridiculous hair stays perfectly still even as she’s wracked with sobs. She must’ve used an industrial-sized amount of hairspray. \
 'Mimm,' you say. 'I hate to bother you but I need to ask you a few questions.' \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her about her hair, or, <emphasis>2</emphasis>, ask her what she’s doing in New Jersey. Say, <emphasis>1</emphasis>, to ask her about her hair, or, <emphasis>2</emphasis>, to ask her what she’s doing in New Jersey.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her about her hair, or, <emphasis>2</emphasis>, ask her what she’s doing in New Jersey.", 
+
+	repromptText51: "Say, <emphasis>1</emphasis>, to ask her about her hair, or, <emphasis>2</emphasis>, to ask her what she’s doing in New Jersey.",
 
 	text52 : "'What’s with your hair?' you ask. It’s distracting. \
 She grabs her hair and brings a few strands in front of her face to look at it. \
 'I wouldn’t be investigating his murder if I didn’t care—' you start, but she cuts you off. \
 Sikh Meriano grabs you by the arm. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, resist him, or, <emphasis>2</emphasis>, get out of there. Say, <emphasis>1</emphasis>, to resist him, or, <emphasis>2</emphasis>, to get out of there.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, resist him, or, <emphasis>2</emphasis>, get out of there.", 
+
+	repromptText52: "Say, <emphasis>1</emphasis>, to resist him, or, <emphasis>2</emphasis>, to get out of there.",
 
 	text53 : "'I have to ask,' you say tactfully, 'what exactly are you doing in New Jersey.' \
 Mimm starts crying even harder. It’s probably something really juicy. \
@@ -922,8 +983,7 @@ Ugh. Could she move this along? \
 The words snap her out of her crying jag. \
 'Yeah, you just said—' you begin, but she cuts you off. \
 She trails off and starts crying again. \
- Wow, that was a significantly less exciting story than you were hoping to hear. Although at least it explains what was going on. And it suggests she didn’t kill Yawnkay. Assuming she’s telling the truth, you remind yourself. \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+ Wow, that was a significantly less exciting story than you were hoping to hear. Although at least it explains what was going on. And it suggests she didn’t kill Yawnkay. Assuming she’s telling the truth, you remind yourself.",
 
 	text54 : "You pull your arm out of Sikh’s grasp. \
 Don’t touch me, you say. 'I have a few more questions I need to ask Mimm.' \
@@ -939,20 +999,20 @@ Oww! You fall to the ground again, this time covering your head with your arms. 
 Sikh is barely out of breath. \
 'How do you know how to fight like that?' you ask, your arms still protecting your skull. \
 You groan. \
-You’d like to try fighting him again, but you know it’s a losing proposition. What now? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+You’d like to try fighting him again, but you know it’s a losing proposition. What now?",
 
 	text55: "You let Sikh Meriano lead you out of the store and you’re once again on a New Jersey street. \
 Not a place you thought you’d find yourself when you woke up this morning. \
 Nothing good ever happens in New Jersey. That’s the only important takeaway message from the musical Hamilton, in your opinion. \
-Well, that could have gone better had you made better choices, but what’s done is done. Now what? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+Well, that could have gone better had you made better choices, but what’s done is done. Now what?",
 
 	text56 : "You decide to throw caution to the wind and go directly to Tyler Quick. \
 You look on Instagram and determine that she’s rehearsing for her upcoming international tour at a nearby venue. You take a Lyft there and see a side entrance that looks to be the way to enter. \
 You open the door. \
 Inside, there’s a large, beefy man standing behind a podium. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, show him your driver’s license, or, <emphasis>2</emphasis>, show him your Yawnkay East card. Say, <emphasis>1</emphasis>, to show him your license, or, <emphasis>2</emphasis>, to show him your Yawnkay East card.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, show him your driver’s license, or, <emphasis>2</emphasis>, show him your Yawnkay East card.", 
+
+	repromptText56: "Say, <emphasis>1</emphasis>, to show him your license, or, <emphasis>2</emphasis>, to show him your Yawnkay East card.",
 
 	text57 : "You look up Kelly Purry on your favorite gossip blog, and find that she’s rehearsing for her upcoming international tour at a nearby concert venue. \
 You take a Lyft there and walk through the front doors. Security stops you, but you show them your Yawnkay East card and tell them you need to deliver a message to Kelly for Yawnkay. \
@@ -967,7 +1027,9 @@ You decide to keep Yawnkay’s death a secret in case Kelly is inclined to tip o
  'I was wondering if you’d be willing to help me get in to see Tyler,' you say. 'You were all together last night.' \
 Rich people are so incredibly strange, you think. \
 'Sure,' you say, 'what kind of contest do you have in mind?' \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, have a dance off, <emphasis>2</emphasis>, have a kissing contest, or, <emphasis>3</emphasis>, fight. Say, <emphasis>1</emphasis>, to have a dance off, <emphasis>2</emphasis>, to have a kissing contest, or, <emphasis>3</emphasis>, to fight.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, have a dance off, <emphasis>2</emphasis>, have a kissing contest, or, <emphasis>3</emphasis>, fight.", 
+
+	repromptText57: "Say, <emphasis>1</emphasis>, to have a dance off, <emphasis>2</emphasis>, to have a kissing contest, or, <emphasis>3</emphasis>, to fight.",
 
 	text58 : "'Let’s have a dance off,' you say. \
 The moment the words come out of your mouth, you wonder why in the world you would’ve picked such a stupid option. You could have chosen to kiss Kelly Purry or even fight her, but instead you choose, dance off? \
@@ -978,7 +1040,9 @@ Idiot. \
 She clears the stage and brings you on it with her. \
 Well, at least you get to be on stage with Kelly Purry. Too bad she’s going to kick your butt and you won’t get the information you need about Tyler Quick. \
 Good question. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, do a hip-hop routine, or, <emphasis>2</emphasis>, a line dance. Say, <emphasis>1</emphasis>, for hip-hop, or, <emphasis>2</emphasis>, for line dance.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, do a hip-hop routine, or, <emphasis>2</emphasis>, a line dance.", 
+
+	repromptText58: "Say, <emphasis>1</emphasis>, for hip-hop, or, <emphasis>2</emphasis>, for line dance.",
 
 	text59 : "You’re not entirely sure what a kissing contest would entail, but if life presents you with the opportunity to kiss Kelly Purry, you’re not dumb. You take it. \
 'Let’s have a kissing contest,' you say. \
@@ -988,11 +1052,15 @@ You’re glad you take mints with you wherever you go. You pop a few in your mou
  'Fine,' you say. \
 You're not in much of a position to bargain. \
 Kelly Purry stands in front of you and closes her eyes waiting for her kiss. Now what to do? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, really go for it tongue and all, or, <emphasis>2</emphasis>, give her a sweet kiss. Say, <emphasis>1</emphasis>, for tongue, or, <emphasis>2</emphasis>, for sweet.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, really go for it tongue and all, or, <emphasis>2</emphasis>, give her a sweet kiss.", 
+
+	repromptText59: "Say, <emphasis>1</emphasis>, for tongue, or, <emphasis>2</emphasis>, for sweet.",
 
 	text60 : "There’s no way you’re going to kiss better than the woman who became famous for her song about kissing, and a dance off is out of the question for obvious reasons, so the only hope you have of winning against Kelly Purry is to fight her. \
 'I choose fight,' you say. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, have a dance off, <emphasis>2</emphasis>, have a kissing contest, or, <emphasis>3</emphasis>, fight. Say, <emphasis>1</emphasis>, to have a dance off, <emphasis>2</emphasis>, to have a kissing contest, or, <emphasis>3</emphasis>, to fight.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, have a dance off, <emphasis>2</emphasis>, have a kissing contest, or, <emphasis>3</emphasis>, fight.", 
+
+	repromptText60: "Say, <emphasis>1</emphasis>, to have a dance off, <emphasis>2</emphasis>, to have a kissing contest, or, <emphasis>3</emphasis>, to fight.",
 
 	text61 : "You pull out your driver’s license and hand it to the guy. \
 Showing him your Yawnkay East card is clearly a bad idea. \
@@ -1003,14 +1071,15 @@ He scowls at you. \
 What in the world was that about? \
 Maybe you should’ve tried talking to Kelly Purry first. \
 What should you do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Kelly Purry, or, <emphasis>2</emphasis>, forget about that lead. Say, <emphasis>1</emphasis>, to talk to Kelly, or, <emphasis>2</emphasis>, to forget about that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Kelly Purry, or, <emphasis>2</emphasis>, forget about that lead.", 
+
+	repromptText61: "Say, <emphasis>1</emphasis>, to talk to Kelly, or, <emphasis>2</emphasis>, to forget about that lead.",
 
 	text62 : "You pull out your Yawnkay East card and hand it to the guy. \
  'Umm, no,' you say. 'I’m Yawnkay East’s assistant. I’m here to speak with Tyler Quick.' \
  'But I—' you start. He cuts you off. \
 Crap. There goes that path of investigation. \
-What should you do now? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+What should you do now?",
 
 	text63 : "'Hip hop,' you say. \
 A beat begins to play, and Kelly Purry busts out some sick b-girl moves. \
@@ -1025,7 +1094,9 @@ When the song ends, Kelly leads you downvstage and the two of you sit at the edg
  'Oh, please,' you say. \
  'Heh, thanks,' you say. \
 You can’t believe she considered what you did a win, but you’ll take it. Now what? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick. Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick.", 
+
+	repromptText63: "Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
 
 	text64 : "'Umm, line dance,' you say. \
 A country song begins to play, and it dawns on you that the only line dance you know is the electric slide. Some older relative taught it to you at a family reunion. \
@@ -1037,7 +1108,9 @@ When the song ends, Kelly leads you downstage and the two of you sit at the edge
  'Oh, please,' you say. \
  'Heh, thanks,' you say. \
 You can’t believe she considered what you did a win, but you’ll take it. Now what? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick. Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick.", 
+
+	repromptText64: "Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
 
 	text65 : "You Google Tim Hoodleston and discover he’s playing Hamlet on a small stage off-off Broadway. What a lucky coincidence. \
 It is convenient that everyone pertinent to your investigation is in New York City, but it’s not that surprising given that New York is the largest city in the US per capita and the greatest city in the world per every song ever written about it. \
@@ -1046,14 +1119,18 @@ Oh good. A matinee is about to end. You stand outside the cast exit waiting for 
 Now is not the time to worry about pissing off some tourist. \
 Finally, Tim exits the building. \
 What should you do to get him to talk to you? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, flash your Yawnkay East card, or, <emphasis>2</emphasis>, offer to sleep with him in exchange for some information. Say, <emphasis>1</emphasis>, to flash your Yawnkay East card, or, <emphasis>2</emphasis>, to offer to sleep with him.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, flash your Yawnkay East card, or, <emphasis>2</emphasis>, offer to sleep with him in exchange for some information.", 
+
+	repromptText65: "Say, <emphasis>1</emphasis>, to flash your Yawnkay East card, or, <emphasis>2</emphasis>, to offer to sleep with him.",
 
 	text66 : "'You finally make your way to Tyler Quick. You look on Instagram to find the venue she’s rehearsing at for her upcoming international tour. You go through the side entrance and see a large, beefy man standing behind a podium. \
 You pull out your driver’s license and hand it to him. He looks at it for a second. \
  'I’m not an employee,' you say. \
 'Yes,' you say. \
 You wrack your brain and can only think of two possible answers. \
-<break time='.5s'/>Is it, <emphasis>1</emphasis>, the pagoda, or, <emphasis>2</emphasis>, the capital. Say, <emphasis>1</emphasis>, for the pagoda, or, <emphasis>2</emphasis>, for the capital.",
+<break time='.5s'/>Is it, <emphasis>1</emphasis>, the pagoda, or, <emphasis>2</emphasis>, the capital.", 
+
+	repromptText66: "Say, <emphasis>1</emphasis>, for the pagoda, or, <emphasis>2</emphasis>, for the capital.",
 
 	text67 : "If you’re going to be one of the top ten kissers, you’re really going to have to go for it. \
 Kelly’s first big hit was all about kissing, for goodness sake. \
@@ -1064,7 +1141,9 @@ Wow. You’re not sure if it was the best kiss she’s ever had, but it was cert
  'Oh, please,' you say. \
  'Heh, thanks,' you say. \
 You can’t believe she considered what you did a win, but you’ll take it. Now what? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick. Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick.", 
+
+	repromptText67: "Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
 
 	text68 : "Kelly Purry has to have had hundreds of amazing deep kisses in her life. \
 Her first big hit was all about kissing, for goodness sake. \
@@ -1073,20 +1152,26 @@ You lean toward her and press your lips to hers. You trace a trail of kisses fro
 Wow. You’re not sure if it was the best kiss she’s ever had, but it was certainly fun to give. \
  'Heh, thanks,' you say. \
 You can’t believe she considered what you did a win, but you’ll take it. Now what? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick. Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick.", 
+
+	repromptText68: "Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
 	
 
 	text69 : "'No, I’d really like to fight you,' you say. \
 She leads you onto center stage and raises her fists. \
 The two of you circle around each other for a few minutes, but neither starts the fight. Finally, Kelly lunges toward you and grabs you around the waist. She knocks you to the ground, landing on top of you. She pulls her fist back, ready to strike you straight in the face. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, concede, or, <emphasis>2</emphasis>, refuse to concede. Say, <emphasis>1</emphasis>, for concede, or, <emphasis>2</emphasis>, to refuse.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, concede, or, <emphasis>2</emphasis>, refuse to concede.", 
+
+	repromptText69: "Say, <emphasis>1</emphasis>, for concede, or, <emphasis>2</emphasis>, to refuse.",
 
 	text70 : "'I concede,' you say. \
 You can’t believe you couldn’t last more than a few minutes in a fight with Kelly Purry, and without even getting a single punch in, but you really needed to save your face. It wouldn’t do to have a broken nose. \
  'Yeah, you were wonderful,' you agree. \
 You smile at her. \
 You can’t believe she considered what you did a win, but you’ll take it. Now what? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick. Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick.", 
+
+	repromptText70: "Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
 
 	text71 : "'Never!' you say. \
 She rolls her eyes, then strikes you right in the throat. \
@@ -1095,7 +1180,9 @@ You roll over on your side, and ball up in a fetal position. Finally, you catch 
  'Yeah, you were wonderful,' you agree. \
 You smile at her. \
 You can’t believe she considered what you did a win, but you’ll take it. Now what? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick. Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, talk to Tim Hoodleston, or, <emphasis>2</emphasis>, go straight to Tyler Quick.", 
+
+	repromptText71: "Say, <emphasis>1</emphasis>, for Tim Hoodleston, or, <emphasis>2</emphasis>, for Tyler Quick.",
 
 	text72 : "'Tim! Tim!' you yell. 'I need to talk to you.' \
 Tim Hoodleston walks over to where you’re standing, and you flash him your Yawnkay East card. \
@@ -1103,7 +1190,9 @@ Tim Hoodleston walks over to where you’re standing, and you flash him your Yaw
 He takes a few more selfies with fans, and then leads you into the building to his dressing room where he takes a seat. \
  'I am Yawnkay’s assistant,' you say, 'but Yawnkay didn’t send me here.' \
 Tim narrows his eyes and jumps out of his chair. He moves toward you, clearly about to throw you out of his dressing room. You better think of something good to say. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell him Yawnkay is dead, or, <emphasis>2</emphasis>, tell him Kelly Purry sent you. Say, <emphasis>1</emphasis>, to tell him Yawnkay is dead, or, <emphasis>2</emphasis>, to tell him Kelly Purry sent you.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, tell him Yawnkay is dead, or, <emphasis>2</emphasis>, tell him Kelly Purry sent you.", 
+
+	repromptText72: "Say, <emphasis>1</emphasis>, to tell him Yawnkay is dead, or, <emphasis>2</emphasis>, to tell him Kelly Purry sent you.",
 
 	text73 : "'Tim! Tim!' you yell. 'I need to talk to you.' \
 Tim walks over to where you’re standing, and you purr in his ear, 'Hey baby, I need some information and if you give it to me, I’ll do anything you want.' \
@@ -1113,7 +1202,9 @@ Ouch. \
 'If you’d just—' you start, but he cuts you off. \
 He turns around and walks out of your life forever. \
 Now what are you going to do? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, try to talk to Tyler Quick without Tim Hoodleston’s help, or, <emphasis>2</emphasis>, give up on that lead. Say, <emphasis>1</emphasis>, to go to Tyler Quick, or, <emphasis>2</emphasis>, to give up on that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, try to talk to Tyler Quick without Tim Hoodleston’s help, or, <emphasis>2</emphasis>, give up on that lead.", 
+
+	repromptText73: "Say, <emphasis>1</emphasis>, to go to Tyler Quick, or, <emphasis>2</emphasis>, to give up on that lead.",
 
 
 	text74 : "'The reason Yawnkay wasn’t the one to send me is because,' you pause for dramatic tension, <break time='.25s'/> 'Yawnkay’s dead.' \
@@ -1123,75 +1214,92 @@ He looks around the room, looking for a hidden camera. \
 'This isn’t a prank,' you say. 'I really need to talk to you.' \
 Oof, that’s harsh. \
 You try to argue with him but he makes it clear he’s not kidding that he wants you gone, and there’s not a single thing you can say to get him to tell you anything else. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, try to talk to Tyler Quick without Tim Hoodleston’s help, or, <emphasis>2</emphasis>, give up on that lead. Say, <emphasis>1</emphasis>, to go to Tyler Quick, or, <emphasis>2</emphasis>, to give up on that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, try to talk to Tyler Quick without Tim Hoodleston’s help, or, <emphasis>2</emphasis>, give up on that lead.", 
+
+	repromptText74: "Say, <emphasis>1</emphasis>, to go to Tyler Quick, or, <emphasis>2</emphasis>, to give up on that lead.",
 	
 	text75 : "'Kelly Purry sent me,' you say. \
  'Yeah,' you say. \
 You flash him your winningest smile and say, 'She told me you could tell me how to get by Tyler Quick’s security so I can talk to her.' \
 Hmm, should you reveal what you’re up to? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, reveal Yawnkay was murdered, or, <emphasis>2</emphasis>, tell him you just want Tyler’s autograph. Say, <emphasis>1</emphasis>, to reveal Yawnkay was murdered, or, <emphasis>2</emphasis>, to tell him you just want her autograph.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, reveal Yawnkay was murdered, or, <emphasis>2</emphasis>, tell him you just want Tyler’s autograph.", 
+
+	repromptText75: "Say, <emphasis>1</emphasis>, to reveal Yawnkay was murdered, or, <emphasis>2</emphasis>, to tell him you just want her autograph.",
 
 	text76 : "You say , 'I need to talk to Tyler about Yawnkay’s murder.'' \
  'Yeah. I found him dead this morning,' you say. \
  'Yawnkay and Tyler were at the same event last night,' you say, 'so I need to find out what she knows.' \
 Hmmm. You’re not sure what you think yet, but what answer will get him to give you the information you need? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, say you think she did it, or, <emphasis>2</emphasis>, say you don’t think she did it. Say, <emphasis>1</emphasis>, to say she did it, or, <emphasis>2</emphasis>, to say she didn’t do it.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, say you think she did it, or, <emphasis>2</emphasis>, say you don’t think she did it.", 
+
+	repromptText76: "Say, <emphasis>1</emphasis>, to say she did it, or, <emphasis>2</emphasis>, to say she didn’t do it.",
 
 	text77 : "'I just want her autograph,' you say. \
  'Well, I—' \
 He interrupts you. \
 You try to argue with him but he makes it clear he’s not kidding that he wants you gone, and there’s not a single thing you can say to get him to tell you anything else. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, try to talk to Tyler Quick without Tim Hoodleston’s help, or, <emphasis>2</emphasis>, give up on that lead. Say, <emphasis>1</emphasis>, to go to Tyler Quick, or, <emphasis>2</emphasis>, to give up on that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, try to talk to Tyler Quick without Tim Hoodleston’s help, or, <emphasis>2</emphasis>, give up on that lead.", 
+
+	repromptText77: "Say, <emphasis>1</emphasis>, to go to Tyler Quick, or, <emphasis>2</emphasis>, to give up on that lead.",
 
 	text78 : "'I think she did it,' you say. \
 Tim and Tyler had a pretty nasty breakup, so, as she does, she wrote an angry song about him. If he thinks you’re out to get Tyler, maybe he’ll give you the information you need. \
 He pauses for a long moment and then says, \
 You try to argue with him but he makes it clear he’s not kidding that he wants you gone, and there’s not a single thing you can say to get him to tell you anything else. What to do now? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, try to talk to Tyler Quick without Tim Hoodleston’s help, or, <emphasis>2</emphasis>, give up on that lead. Say, <emphasis>1</emphasis>, to go to Tyler Quick, or, <emphasis>2</emphasis>, to give up on that lead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, try to talk to Tyler Quick without Tim Hoodleston’s help, or, <emphasis>2</emphasis>, give up on that lead.", 
+
+	repromptText78: "Say, <emphasis>1</emphasis>, to go to Tyler Quick, or, <emphasis>2</emphasis>, to give up on that lead.",
 
 	text79 : "'I’m not ready to accuse anybody,' you say, 'but she could help me figure out what he was doing last night.' \
 Tim thinks on this for a moment, then finally responds. \
 You thank him profusely. Now what to do? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask him to repeat what he said, or, <emphasis>2</emphasis>, go talk to Tyler Quick. Say, <emphasis>1</emphasis>, to ask him to repeat what he said, or, <emphasis>2</emphasis>, to go talk to Tyler Quick.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask him to repeat what he said, or, <emphasis>2</emphasis>, go talk to Tyler Quick.", 
+
+	repromptText79: "Say, <emphasis>1</emphasis>, to ask him to repeat what he said, or, <emphasis>2</emphasis>, to go talk to Tyler Quick.",
 
 	text80 : "'Could you please repeat that?' you ask. \
 He smiles at you. \
 You thank him profusely. Now what to do? \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask him to repeat what he said, or, <emphasis>2</emphasis>, go talk to Tyler Quick. Say, <emphasis>1</emphasis>, to ask him to repeat what he said, or, <emphasis>2</emphasis>, to go talk to Tyler Quick.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask him to repeat what he said, or, <emphasis>2</emphasis>, go talk to Tyler Quick.", 
+
+	repromptText80: "Say, <emphasis>1</emphasis>, to ask him to repeat what he said, or, <emphasis>2</emphasis>, to go talk to Tyler Quick.",
 
 	text81 : "'The pagoda,' you say confidently. \
 So many questions. \
 Only two possibilities pop into your head. \
-<break time='.5s'/>Is it, <emphasis>1</emphasis>, thirteen-years-old, or, <emphasis>2</emphasis>, fourteen-years-old. Say, <emphasis>1</emphasis>, for thirteen, or, <emphasis>2</emphasis>, for fourteen.",
+<break time='.5s'/>Is it, <emphasis>1</emphasis>, thirteen-years-old, or, <emphasis>2</emphasis>, fourteen-years-old.", 
+
+	repromptText81: "Say, <emphasis>1</emphasis>, for thirteen, or, <emphasis>2</emphasis>, for fourteen.",
 
 	text82 : "'The Capital,' you say. \
 He scowls at you. \
 'Wait, no. Let me try again,' you plead, but he’ll have nothing of it. \
 There’s no way you’re going to get to see Tyler now. This line of inquiry is over. \
-What to do? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+What to do?",
 
 	text83 : "'Thirteen,' you say. \
 He scowls at you. \
 'Wait, no. Let me try again,' you plead, but he’ll have nothing of it. \
 There’s no way you’re going to get to see Tyler now. This line of inquiry is over. \
-What to do? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+What to do?",
 
 	text84 : "'Fourteen,' you say. \
 Ugh. You wrack your brain. \
-<break time='.5s'/>Is it, <emphasis>1</emphasis>, number 4, or, <emphasis>2</emphasis>, number 5. Say, <emphasis>1</emphasis>, for four, or, <emphasis>2</emphasis>, for five.",
+<break time='.5s'/>Is it, <emphasis>1</emphasis>, number 4, or, <emphasis>2</emphasis>, number 5.", 
+
+	repromptText84: "Say, <emphasis>1</emphasis>, for four, or, <emphasis>2</emphasis>, for five.",
 
 	text85 : "'Four,' you say. \
 He scowls at you. \
 'Wait, no. Let me try again,' you plead, but he’ll have nothing of it. \
 There’s no way you’re going to get to see Tyler now. This line of inquiry is over, and you were so close! \
-What to do? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+What to do?",
 
 	text86 : "'Five,' you say. \
 Hmmm. You know that Tyler performs both pop and country music. Which was it? \
-Is it, <emphasis>1</emphasis>, Billboard’s Hot Country Songs, or, <emphasis>2</emphasis>, Billboard’s Hot 100. Say, <emphasis>1</emphasis>, for Billboard’s Hot Country Songs, or, <emphasis>2</emphasis>, for Billboard’s Hot 100.",
+Is it, <emphasis>1</emphasis>, Billboard’s Hot Country Songs, or, <emphasis>2</emphasis>, Billboard’s Hot 100.", 
+
+	repromptText86: " Say, <emphasis>1</emphasis>, for Billboard’s Hot Country Songs, or, <emphasis>2</emphasis>, for Billboard’s Hot 100.",
 
 	text87 : "'Billboard’s Hot Country Songs,' you say. \
 Yes! You mentally pat yourself on the back. \
@@ -1201,14 +1309,15 @@ Well, other than the songs about feuds she’s having with fellow pop stars. \
 You wait until she takes a break in her dressing room. You follow her back and knock on the door. \
 You enter the dressing room. \
 You’ve come all this way. You don’t want to screw this up now. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her about Just Seeds straight off, or, <emphasis>2</emphasis>, make some small talk first. Say, <emphasis>1</emphasis>, to ask about Just Seeds directly, or, <emphasis>2</emphasis>, to make small talk.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her about Just Seeds straight off, or, <emphasis>2</emphasis>, make some small talk first.", 
+
+	repromptText87: "Say, <emphasis>1</emphasis>, to ask about Just Seeds directly, or, <emphasis>2</emphasis>, to make small talk.",
 
 	text88 : "'Billboard’s Top 100,' you say. \
 He scowls at you. \
 'Wait, no. Let me try again,' you plead, but he’ll have nothing of it. \
 There’s no way you’re going to get to see Tyler now. This line of inquiry is over, and you were so close! \
-What to do? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+What to do?",
 
 	text89 : "'What were you doing at Just Seeds last night?' you ask. \
  'I’m Yawnkay’s assistant and—' \
@@ -1216,8 +1325,7 @@ She shudders. \
 'No, wait,' you say. 'I’ve worked so hard to get here. He’s been murdered and—' \
  'Sometimes the most obvious choice really is the killer,' you say. \
 Before you can say anything further a burly security guard drags you from the room. \
-What now? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+What now?",
 
 	text90 :  "'Hi Tyler,' you say. 'Big fan.' \
 She motions you toward a chair. \
@@ -1227,37 +1335,43 @@ She rises and walks toward a snack table. \
 'Umm, sure,' you say. You’re not a fan of seltzer water, but you red that if you let people do small favors for you, they’ll do larger ones afterward. Now’s your chance. \
 'Can I ask you a couple of questions about last night?' you say. \
 She hands you a LaCroy and then flops down on her overstuffed chair. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her why she did an event with Yawnkay, or, <emphasis>2</emphasis>, ask her why she went to Kelly Purry’s event. Say, <emphasis>1</emphasis>, to ask why she did an event with Yawnkay, or, <emphasis>2</emphasis>, to ask why she went to Kelly Purry’s event.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask her why she did an event with Yawnkay, or, <emphasis>2</emphasis>, ask her why she went to Kelly Purry’s event.", 
+
+	repromptText90: "Say, <emphasis>1</emphasis>, to ask why she did an event with Yawnkay, or, <emphasis>2</emphasis>, to ask why she went to Kelly Purry’s event.",
 
 	text91 : "'Why did you go to an event with Yawnkay?' you ask \
  'But you took a picture with him,' you say. \
  'What did you do when you realized it was Yawnkay?' you ask. \
 Tyler flips her hair dramatically. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, insinuate that Tyler killed Yawnkay, or, <emphasis>2</emphasis>, tell her directly that Yawnkay is dead. Say, <emphasis>1</emphasis>, to insinuate Tyler Killed Yawnkay, or, <emphasis>2</emphasis>, to tell her directly that Yawnkay is dead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, insinuate that Tyler killed Yawnkay, or, <emphasis>2</emphasis>, tell her directly that Yawnkay is dead.", 
+
+	repromptText91: "Say, <emphasis>1</emphasis>, to insinuate Tyler Killed Yawnkay, or, <emphasis>2</emphasis>, to tell her directly that Yawnkay is dead.",
 
 	text92 : "'Why did you go to Kelly Purry’s event?' you ask. \
  'Well, isn’t it?' you say. \
  'But I thought you two weren’t particularly close,' you say. \
  'Interesting,' you say. 'Is that why you invited Yawnkay too? Even bigger publicity?' \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask if that’s the reason she killed him, or, <emphasis>2</emphasis>, why did she take a smiling picture with him. Say, <emphasis>1</emphasis>, to ask if that’s the reason she killed him, or, <emphasis>2</emphasis>, to ask why she took a smiling picture with him.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, ask if that’s the reason she killed him, or, <emphasis>2</emphasis>, why did she take a smiling picture with him.", 
+
+	repromptText92: "Say, <emphasis>1</emphasis>, to ask if that’s the reason she killed him, or, <emphasis>2</emphasis>, to ask why she took a smiling picture with him.",
 
 	text93 : "'Is that why you killed him?' you say. \
  'Yawnkay was found dead this morning. In fact, you might have been one of the last people to see him alive,' you say. \
  'Then who do you think did?' you ask. \
- 'My name is—' you start, but before you finish the sentence, a security guard drags you from the room. \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+ 'My name is—' you start, but before you finish the sentence, a security guard drags you from the room.",
 
 	text94 : "'Then why did you take a picture with him?' you ask. \
  'What did you do when you realized it was Yawnkay?' you ask. \
 Tyler flips her hair dramatically. \
-<break time='.5s'/>Should you, <emphasis>1</emphasis>, insinuate that Tyler killed Yawnkay, or, <emphasis>2</emphasis>, tell her directly that Yawnkay is dead. Say, <emphasis>1</emphasis>, to insinuate Tyler Killed Yawnkay, or, <emphasis>2</emphasis>, to tell her directly that Yawnkay is dead.",
+<break time='.5s'/>Should you, <emphasis>1</emphasis>, insinuate that Tyler killed Yawnkay, or, <emphasis>2</emphasis>, tell her directly that Yawnkay is dead.", 
+
+	repromptText94: " Say, <emphasis>1</emphasis>, to insinuate Tyler Killed Yawnkay, or, <emphasis>2</emphasis>, to tell her directly that Yawnkay is dead.",
 
 	text95 : "'You’ll tell it to their face,' you say, 'or murder them.' \
 The accusation hangs in the air for a moment. \
  'Yawnkay was found dead this morning. In fact, you might have been one of the last people to see him alive.' \
  'Then who do you think did?' you ask. \
- 'My name is—' you start, but before you finish the sentence, a security guard drags you from the room. \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+ 'My name is—' you start, but before you finish the sentence, a security guard drags you from the room.",
 
 	text96 : "'Yawnkay died last night,' you tell her. You watch closely for her reaction to the news. \
  'Yeah, someone murdered him,' you say. 'You’re one of the last people on earth to see him alive.' \
@@ -1265,11 +1379,10 @@ Her eyes widen and she sits up in her chair. \
 'If it wasn’t you,' you say, 'then who do you think did it?' \
  'Is there anything else you can tell me about last night?' you ask. 'Anything that might help me figure out who Yawnkay’s murderer is?' \
 You look at her for a long moment and you’re almost positive she’s telling the truth. Her mannerisms suggest she’s being honest, but also, she assumed Yawnkay was shot, when, in reality, he died from pills. \
-But if she didn’t do it, who did? \
-<break time='.5s'/>Should you investigate, Bob May, Christy Benner, or, Tyler Quick, or just go ahead and make an accusation. Say, Bob, for Bob May, Christy, for Christy Benner, Tyler, for Tyler Quick, or Accuse to make an accusation.",
+But if she didn’t do it, who did?",
 
 	text97 : "You look around at the people assembled in Yawnkay’s lucky sitting room number seven. \
-The security guard glances nervously at Christy Benner who sits next to her daughter Mimm May. Sikh Meriano sits on Mimm’s other side, stroking her ridiculously coiffed hair. \
+The bodyguard glances nervously at Christy Benner who sits next to her daughter Mimm May. Sikh Meriano sits on Mimm’s other side, stroking her ridiculously coiffed hair. \
 Tyler Quick is on the far side of the room from Kelly Purry and Tim Hoodleston, glaring daggers at them. \
 You look at Bob May who awkwardly stands next to Grey Korea. Tangerine Tulip sits on a chair near them, both of her eyes blackened and her nose swollen. \
 You’re convinced Yawnkay’s murderer is in this room, but who is it? No options this time. Just state the name of the person you think is the murderer. Or if you’d like to hear a description of the people in the room repeated say, 'repeat'.",
@@ -1500,7 +1613,7 @@ After news of the murder dies down, you never obtain fame or fortune, but you do
 \
 CONGRATULATIONS! Would you like to play again?", 
 
-	fallBackText111 : 'Would like to play again? Say yes or no.'
+	repromptText111 : 'Would like to play again? Say yes or no.'
 
 	text200 : "'I’ve brought you all here,' you say to the people you gathered together, 'because Yawnkay was murdered last night, and I’m pretty sure I know who did it.' \
 You look around at the people assembled in Yawnkay’s lucky sitting room number seven. \
