@@ -1,0 +1,698 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "select a story",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent"
+        },
+        {
+          "name": "AMAZON.RepeatIntent"
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "help"
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+            "I say no"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+            "i say yes"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent"
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": [
+            "start over"
+          ]
+        },
+        {
+          "name": "AidIntent",
+          "samples": [
+            "\taid",
+            "\taid the bird",
+            "aid bird",
+            "bird"
+          ]
+        },
+        {
+          "name": "AssistanceIntent",
+          "samples": [
+            "\taccept assistance",
+            "\tassist",
+            "\tstay to assist"
+          ]
+        },
+        {
+          "name": "AttorneyIntent",
+          "samples": [
+            "\tattorney",
+            "\tfind the attorney"
+          ]
+        },
+        {
+          "name": "BackStairsIntent",
+          "samples": [
+            "\tback stairs",
+            "look in the back stairs"
+          ]
+        },
+        {
+          "name": "BadIntent"
+        },
+        {
+          "name": "BadNewsIntent",
+          "samples": [
+            "\tbad",
+            "\tbad news"
+          ]
+        },
+        {
+          "name": "BedPostsIntent",
+          "samples": [
+            "\tbedposts",
+            "\this bedposts",
+            "look in his bedposts"
+          ]
+        },
+        {
+          "name": "BlondeIntent",
+          "samples": [
+            "\tblonde",
+            "I pick the blonde",
+            "I choose the blonde"
+          ]
+        },
+        {
+          "name": "BouquetIntent",
+          "samples": [
+            "\tbouquet",
+            "\tbouquet of flowers",
+            "\tflowers",
+            "answer bouquet of flowers",
+            "answer bouquet",
+            "answer flowers"
+          ]
+        },
+        {
+          "name": "BrunetteIntent",
+          "samples": [
+            "\tbrunette",
+            "i pick the brunette",
+            "i choose the brunette"
+          ]
+        },
+        {
+          "name": "BurstInIntent",
+          "samples": [
+            "\tburst in",
+            "burst",
+            "bust in"
+          ]
+        },
+        {
+          "name": "ClarenceIntent",
+          "samples": [
+            "\tclarence",
+            "\tfind clarence"
+          ]
+        },
+        {
+          "name": "CoalChuteIntent",
+          "samples": [
+            "\tcoal chute",
+            "\tlook in the coal chute",
+            "coal",
+            "chute"
+          ]
+        },
+        {
+          "name": "CottageIntent",
+          "samples": [
+            "\tcottage",
+            "\tmodest cottage",
+            "modest"
+          ]
+        },
+        {
+          "name": "DoSomethingIntent",
+          "samples": [
+            "\tdo something"
+          ]
+        },
+        {
+          "name": "DownstairsIntent",
+          "samples": [
+            "\tdownstairs",
+            "look downstairs"
+          ]
+        },
+        {
+          "name": "DragonIntent",
+          "samples": [
+            "\tdragon",
+            "\tgo to the dragon",
+            "\thead to the dragon"
+          ]
+        },
+        {
+          "name": "DresserIntent",
+          "samples": [
+            "\told dresser",
+            "\tsearch old dresser",
+            "\tsearch your father's old dresser",
+            "look in dresser",
+            "look in old dresser",
+            "look in your father's old dress",
+            "search my father's old dresser"
+          ]
+        },
+        {
+          "name": "DropIntent",
+          "samples": [
+            "\tdrop weapon",
+            "\tdrop your weapon",
+            "drop my weapon"
+          ]
+        },
+        {
+          "name": "FairyIntent",
+          "samples": [
+            "\tfairy",
+            "\tfind a fairy"
+          ]
+        },
+        {
+          "name": "FinchesIntent",
+          "samples": [
+            "\tfinches",
+            "pick the finches",
+            "\tpick the finches"
+          ]
+        },
+        {
+          "name": "FindHerIntent",
+          "samples": [
+            "\tfind her"
+          ]
+        },
+        {
+          "name": "FireplaceIntent",
+          "samples": [
+            "\tfireplace",
+            "\tsearch by the fireplace",
+            "\tsearch fireplace",
+            "look by the fireplace"
+          ]
+        },
+        {
+          "name": "FramedIntent",
+          "samples": [
+            "\tframed",
+            "say framed"
+          ]
+        },
+        {
+          "name": "FrontPorchIntent",
+          "samples": [
+            "\tfront porch",
+            "\tunder the front porch",
+            "look under the front porch"
+          ]
+        },
+        {
+          "name": "GetDragonIntent",
+          "samples": [
+            "\tget the dragon",
+            "\tget the dragon myself",
+            "\tget the dragon yourself",
+            "dragon yourself",
+            "dragon myself",
+            "dragon"
+          ]
+        },
+        {
+          "name": "GiveUpIntent",
+          "samples": [
+            "\tgive up",
+            "give",
+            "up"
+          ]
+        },
+        {
+          "name": "GoForItIntent",
+          "samples": [
+            "\tgo for it"
+          ]
+        },
+        {
+          "name": "GoingIntent",
+          "samples": [
+            "\tkeep going",
+            "going"
+          ]
+        },
+        {
+          "name": "GoodIntent",
+          "samples": [
+            "\tgood"
+          ]
+        },
+        {
+          "name": "GoodNewsIntent",
+          "samples": [
+            "\tgood news",
+            "\tthe good news"
+          ]
+        },
+        {
+          "name": "HaikuIntent",
+          "samples": [
+            "\thaiku",
+            "it was a haiku",
+            "\twrite a haiku",
+            "i write a haiku"
+          ]
+        },
+        {
+          "name": "HearMoreIntent",
+          "samples": [
+            "\task to hear more",
+            "\thear more",
+            "hear",
+            "more"
+          ]
+        },
+        {
+          "name": "KnifeIntent",
+          "samples": [
+            "\tknife them",
+            "\tswing the knife",
+            "\tthe knife"
+          ]
+        },
+        {
+          "name": "LeaveAloneIntent",
+          "samples": [
+            "\tleave her alone",
+            "leave alone",
+            "leave her"
+          ]
+        },
+        {
+          "name": "LeaveIntent",
+          "samples": [
+            "\tleave early",
+            "\tleave kitchen",
+            "\tleave the kitchen",
+            "leave",
+            "\tleave it"
+          ]
+        },
+        {
+          "name": "LeaveItIntent"
+        },
+        {
+          "name": "LieIntent",
+          "samples": [
+            "\tflat out lie",
+            "\tlie",
+            "flat out"
+          ]
+        },
+        {
+          "name": "LimerickIntent",
+          "samples": [
+            "\tlimerick",
+            "it was a limerick",
+            "I write a limerick"
+          ]
+        },
+        {
+          "name": "ListenIntent",
+          "samples": [
+            "\tkeep listening",
+            "\tlisten",
+            "listening"
+          ]
+        },
+        {
+          "name": "LoveIntent",
+          "samples": [
+            "\tlove"
+          ]
+        },
+        {
+          "name": "MansionIntent",
+          "samples": [
+            "\tmansion"
+          ]
+        },
+        {
+          "name": "MatureIntent",
+          "samples": [
+            "\tact mature",
+            "mature"
+          ]
+        },
+        {
+          "name": "MouthShutIntent",
+          "samples": [
+            "\tkeep your mouth shut",
+            "\tkeep my mouth shut",
+            "\tmouth shut",
+            "keep it shut",
+            "keep mouth shut"
+          ]
+        },
+        {
+          "name": "MurderIntent",
+          "samples": [
+            "\tcommit murder",
+            "\tmurder"
+          ]
+        },
+        {
+          "name": "OfferIntent",
+          "samples": [
+            "\ttake the offer",
+            "offer",
+            "accept the offer"
+          ]
+        },
+        {
+          "name": "OneFiftyIntent",
+          "samples": [
+            "\tone fifty",
+            "answer one fifty"
+          ]
+        },
+        {
+          "name": "OneSeventyFiveIntent",
+          "samples": [
+            "\tone hundred and seventy five",
+            "\tone seventy five",
+            "answer one seventy five"
+          ]
+        },
+        {
+          "name": "OpalDragonIntent",
+          "samples": [
+            "Intent \tseek an opal dragon",
+            "\topal",
+            "\tseek an opal",
+            "opal dragon"
+          ]
+        },
+        {
+          "name": "OstrichIntent",
+          "samples": [
+            "\tostrich",
+            "say ostrich"
+          ]
+        },
+        {
+          "name": "OutsideIntent",
+          "samples": [
+            "\toutside"
+          ]
+        },
+        {
+          "name": "PalaceIntent",
+          "samples": [
+            "\tpalace"
+          ]
+        },
+        {
+          "name": "ParakeetIntent",
+          "samples": [
+            "\tparakeet",
+            "say parakeet"
+          ]
+        },
+        {
+          "name": "PigeonIntent",
+          "samples": [
+            "\tpigeons",
+            "pick the pigeons"
+          ]
+        },
+        {
+          "name": "PoisonIntent",
+          "samples": [
+            "\tpoison",
+            "\tpoison them",
+            "let die",
+            "let them die"
+          ]
+        },
+        {
+          "name": "RainbowIntent",
+          "samples": [
+            "\trainbow",
+            "say rainbow"
+          ]
+        },
+        {
+          "name": "ReconsiderIntent",
+          "samples": [
+            "\tchange your mind",
+            "change mind",
+            "change my mind"
+          ]
+        },
+        {
+          "name": "RefuseIntent",
+          "samples": [
+            "\trefuse immediately",
+            "\trefuse my father",
+            "\trefuse your father",
+            "refuse",
+            "immediately"
+          ]
+        },
+        {
+          "name": "ResultsIntent",
+          "samples": [
+            "\thear results",
+            "\tresults",
+            "\tstay to hear results"
+          ]
+        },
+        {
+          "name": "RubItInIntent",
+          "samples": [
+            "\trub it in"
+          ]
+        },
+        {
+          "name": "RubyDragonIntent",
+          "samples": [
+            "\truby",
+            "\truby dragon",
+            "\tseek a ruby dragon",
+            "seek a ruby"
+          ]
+        },
+        {
+          "name": "RunAwayIntent"
+        },
+        {
+          "name": "RunIntent",
+          "samples": [
+            "\trun away",
+            "\trun",
+            "\trun for it"
+          ]
+        },
+        {
+          "name": "SatchelIntent",
+          "samples": [
+            "\tbring a satchel",
+            "\tsatchel",
+            "bring"
+          ]
+        },
+        {
+          "name": "SeaIntent",
+          "samples": [
+            "\tgo to the sea",
+            "\tthe sea"
+          ]
+        },
+        {
+          "name": "ShoeIntent",
+          "samples": [
+            "\tthe shoe",
+            "\tuse the shoe",
+            "shoe"
+          ]
+        },
+        {
+          "name": "SlashIntent",
+          "samples": [
+            "\tslash",
+            "\tslash her",
+            "\tslash the dragon"
+          ]
+        },
+        {
+          "name": "SmileAndNodIntent",
+          "samples": [
+            "\tsmile and nod",
+            "smile",
+            "nod"
+          ]
+        },
+        {
+          "name": "SmotherIntent",
+          "samples": [
+            "\tsmother",
+            "\tsmother her"
+          ]
+        },
+        {
+          "name": "SnappedIntent",
+          "samples": [
+            "\tsnapped",
+            "say snapped"
+          ]
+        },
+        {
+          "name": "SneakIntent",
+          "samples": [
+            "\tsneak",
+            "sneak past",
+            "\tsneak past her"
+          ]
+        },
+        {
+          "name": "SnoopIntent",
+          "samples": [
+            "\tsnoop",
+            "\tsnoop around"
+          ]
+        },
+        {
+          "name": "StayIntent",
+          "samples": [
+            "\tstay here",
+            "\tstay to help"
+          ]
+        },
+        {
+          "name": "TantrumIntent",
+          "samples": [
+            "\ttantrum",
+            "\tthrow a tantrum",
+            "throw"
+          ]
+        },
+        {
+          "name": "TellHimIntent",
+          "samples": [
+            "\ttell him what you think",
+            "tell him",
+            "what you think",
+            "open up"
+          ]
+        },
+        {
+          "name": "TimIntent",
+          "samples": [
+            "\tTim",
+            "say Tim"
+          ]
+        },
+        {
+          "name": "TravelLightIntent",
+          "samples": [
+            "\ttravel light",
+            "travel",
+            "light"
+          ]
+        },
+        {
+          "name": "TresIntent",
+          "samples": [
+            "\ttrace",
+            "say trace"
+          ]
+        },
+        {
+          "name": "TruthIntent",
+          "samples": [
+            "\ta version of the truth",
+            "\ttell her the truth",
+            "\tthe truth",
+            "tell her a version of the truth"
+          ]
+        },
+        {
+          "name": "UpstairsIntent",
+          "samples": [
+            "\tlook upstairs",
+            "\tupstairs"
+          ]
+        },
+        {
+          "name": "WaitIntent",
+          "samples": [
+            "\tkeep waiting",
+            "\twait"
+          ]
+        },
+        {
+          "name": "WearIntent",
+          "samples": [
+            "\twear",
+            "\twear it"
+          ]
+        },
+        {
+          "name": "WillIntent",
+          "samples": [
+            "\tfind the will",
+            "\tlook for the will yourself",
+            "look for the will myself",
+            "will myself",
+            "will yourself",
+            "\tthe will",
+            "\twill"
+          ]
+        },
+        {
+          "name": "NewGameIntent",
+          "samples": [
+            "new game",
+            "play new game"
+          ]
+        },
+        {
+          "name": "SkipIntent",
+          "samples": [
+            "skip"
+          ]
+        },
+        {
+          "name": "GoBackIntent",
+          "samples": [
+            "go back",
+            "go back to the game",
+            "back to the game"
+          ]
+        }
+      ]
+    }
+  }
+}

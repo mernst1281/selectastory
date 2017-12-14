@@ -1,0 +1,40 @@
+{
+  "skillManifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "With Select a Story, YOU get to select what happens next. Would you rather be Cinderella or Prince Charming? With over 30 endings, their fate is in your hands!",
+          "examplePhrases": [
+            "Alexa, open select a story",
+            "Find a fairy",
+            "Get the dragon"
+          ],
+          "keywords": [
+            "games",
+            "interactive",
+            "stories",
+            "fairytales",
+            "kids",
+            "stories"
+          ],
+          "name": "Select a Story",
+          "smallIconUri": "https://api.amazonalexa.com/v0/skills/amzn1.ask.skill.a2357136-45d2-4764-b3b0-cbe0703479b6/images/eyJkIjoiTWUvQUlWZ3J4eWttUDYzOVdPY29hb2pRMUtrTkIwakJqQzl6cG1JVFREaE93VUxUQVlablAzeThidCtTYTFUeEI0MStFcUVQV0pnamdKQ0FOSDZZM2U5ZHFhZ1E5VHdtbSswNUFienlVcTZra2ppRjJMaGZzYUx2OGlHQ2NZRksiLCJpdiI6IkJvak5rMmV2a0lEWktMSzllUmtpTGc9PSIsInYiOjF9",
+          "description": "With Select a Story, YOU get to select what happens next.\n\nWould you rather be Cinderella or Prince Charming?\n\nAs Cinderella, you can wait around hoping someday your prince will come or take the matter of your evil stepfamily into your own hands. \n\nAs Prince Charming, you can accept your father's wacky plan to find you a wife or go on a dangerous quest to find a dragon's egg.\n\nThere are dozens of endings to discover. Some bring you love and riches, others result in your painful death, with plenty of outcomes in between.",
+          "largeIconUri": "https://api.amazonalexa.com/v0/skills/amzn1.ask.skill.a2357136-45d2-4764-b3b0-cbe0703479b6/images/eyJkIjoiUjVUOHRRUkVhYjI2MkhSVlkvaEVsOUN1TkMyQmd0S256c05NVXpPdmx4c3IzMFBJY3dRSGsxbTNiNXFGdWJ4Qk9nWFJQcm0rNVA3NzdQV3dURE9GQXU4bmRtbzVjSkVwTTRPVTc5WngxYmN3WCsySUhsbmpXR0c0R1M3NkxRLzlQcWJzbmhlNXZOWFVwTy80b1RUSzFnPT0iLCJpdiI6IlhHWWwvbTNDdDR2ZFgrOGs0U3pXcUE9PSIsInYiOjF9"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "category": "CHILDRENS_GAMES",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda\\custom"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}
