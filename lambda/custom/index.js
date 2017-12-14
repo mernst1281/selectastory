@@ -1218,8 +1218,7 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
 
     'TellStoryIntent' : function (chapter){
         attempts = 0;
-        //url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3';
+        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
         repromptUrl = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3';
  
         this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+repromptUrl+'" />', cardTitle, cardText, cardImage);
@@ -1290,8 +1289,7 @@ const bookendHandlers = Alexa.CreateStateHandler(states.bookendState, {
     
     'EndSceneIntent' : function (chapter) {
         attempts = 0;
-        //url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/closing.mp3';
+        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
         this.attributes['stories'][storyIndex]['chapter'] = 1;
        
         this.emit(':askWithCard', '<audio src="'+url+'" /><audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/startover.mp3 />', '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/startover.mp3 />', cardTitle, cardText, cardImage);
