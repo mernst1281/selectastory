@@ -5,9 +5,7 @@ const Alexa = require('alexa-sdk');
 const APP_ID = "amzn1.ask.skill.a2357136-45d2-4764-b3b0-cbe0703479b6";
 const permissionArray = ['read::alexa:device:all:address'];
 const states = {
-    gameState : 'gameState',
-    helpState : 'helpState',
-    bookendState : 'bookendState'
+    gameState : 'gameState'
 };
 const cardTitle = 'Select A Story';
 const cardImage = {
@@ -15,9 +13,14 @@ const cardImage = {
     smallImageUrl : 'https://s3.amazonaws.com/selectastory/cinderella/prod/smalltitle.jpg' 
 };
 const cardText = 'www.selectastory.com';
+const goodbyeText = 'Thanks for playing. Please visit us at selectastory.com';
+const newGameText = 'Would you like to start a new game?';
+const closingUrl = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/closing.mp3" />';
+const openingUrl = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/opening.mp3" />';
+const endScenes = [82, 81, 83, 84, 39, 37, 35, 34, 31,30,26, 41, 42, 75, 77, 14, 59, 60, 61, 62, 47, 48, 49, 50, 55, 56, 57, 58, 8, 109, 112, 115, 158, 146, 148,154, 151, 153, 155, 138, 139, 136,137,134,135,125, 127,128,129, 137];
 let storyIndex = 0;
 let url = "";
-let repromptUrl = "";
+let repromptText = "";
 let attempts = 0;
 
 // App Handler Functions
@@ -41,16 +44,21 @@ const newSessionHandlers = {
             this.attributes['stories'].push(activeStory);
             this.handler.state = states.gameState;
             url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/1.mp3';
-            repromptUrl = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt1.mp3';
-        
-            this.emit(':askWithCard', '<audio src="https://s3.amazonaws/selectastory/cinderella/prod/opening.mp3" /><audio src="'+url+'" />', '<audio src="'+repromptUrl+'" />', cardTitle, cardText, cardImage);
+            repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt1.mp3" />';
+            let introText = 'Welcome to Select a Story, cinder charming by Katie Ernst starts now'; 
+            this.emitWithState('TellStoryIntent', 1, introText);  
+            //this.response.cardRenderer(cardTitle, cardText, cardImage).speak(openingUrl + introText + '<break time="2s" /><audio src="' + url + '"/>').listen(repromptText);
+            //this.emitWithState(':responseReady');
         } else {
             storyIndex = getActiveStoryIndex.call(this);
             this.handler.state = states.gameState;
             var chapter = this.attributes['stories'][storyIndex]['chapter'];
             url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
-            repromptUrl = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3';
-            this.emit(':askWithCard', '<audio src="https://s3.amazonaws/selectastory/cinderella/prod/opening.mp3" /><audio src="'+url+'" />', '<audio src="'+repromptUrl+'" />', cardTitle, cardText, cardImage);
+            repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3" />';
+            let introText = 'Welcome back to Select a story, would you like to finish your last story or begin a new game?';
+            this.emitWithState('TellStoryIntent', chapter, introText);
+            //this.response.cardRenderer(cardTitle, cardText, cardImage).speak('<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/opening.mp3" />' + introText).listen(introText);
+            //this.emitWithState(":responseReady");
         }
     }
 };
@@ -62,34 +70,59 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         this.handler.state = states.gameState;
         var chapter = this.attributes['stories'][storyIndex]['chapter'];
         url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
-        repromptUrl = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3';
-        this.emit(':askWithCard', '<audio src="https://s3.amazonaws/selectastory/cinderella/prod/opening.mp3" /><audio src="'+url+'" />', '<audio src="'+repromptUrl+'" />', cardTitle, cardText, cardImage);
+        repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3" />';
+        let introText = 'Welcome back to Select a story, would you like to finish your last story or begin a new game?';
+        this.response.cardRenderer(cardTitle, cardText, cardImage).speak('<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/opening.mp3" />' + introText).listen(introText);
+        this.emit(":responseReady");
     },
 
     'SessionEndedRequest' : function () {
         this.emit(':saveState', true);
+        this.response.cardRenderer(cardTitle, cardText, cardImage).speak(goodbyeText + closingUrl);
+        this.emit(":responseReady");
     },
 
     // Amazon Intents
     
     'AMAZON.CancelIntent' : function () { 
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/goodbye.mp3';
-        this.emit(':tellWithCard', '<audio src="'+url+'" /><audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/closing.mp3" />', cardTitle, cardText, cardImage); 
+        this.response.cardRenderer(cardTitle, cardText, cardImage).speak(goodbyeText + closingUrl);
+        this.emit(":responseReady");
     },
 
-    'AMAZON.HelpIntent' : function () {
-        this.handler.state = states.helpState;
-        this.emitWithState('HelpIntent');
-    },
+     'AMAZON.HelpIntent' : function () {
+        attempts = 0;
+        let helpText = "You are playing an interactive adventure.  \
+                        You will be given several choices during the game and just state your choice to make your selection.  \
+                        If you want to skip a scene say, Alexa Next. \
+                        If you want to start a new game say, New Game. \
+                        To repeat a scene say, Alexa repeat. \
+                        If you need these instructions again just say, help. \
+                        To go back to the game say, go back.";
+        this.response.cardRenderer(cardTitle, cardText, cardImage).speak(helpText).listen('Say repeat to hear these instructions again or go back to continue the game');
+        this.emit(":responseReady");
+    }, 
 
     'AMAZON.NoIntent' : function () {
-        if(this.attributes['stories'][storyIndex]['chapter'] === 80){
+        if (endScenes.indexOf(this.attributes['stories'][storyIndex]['chapter']) !== -1) {
+            this.attributes['stories'][storyIndex]['chapter'] = 1;
+            this.response.cardRenderer(cardTitle, cardText, cardImage).speak(goodbyeText + closingUrl);
+            this.emit(":responseReady");
+        } else if(this.attributes['stories'][storyIndex]['chapter'] === 80){
             this.attributes['stories'][storyIndex]['chapter'] = 82;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 82);
         } else {
             this.emitWithState('Unhandled');
         }
+    },
+
+    'AMAZON.NextIntent' : function () {
+        if(endScenes.indexOf(this.attributes['stories'][storyIndex]['chapter']) === -1){
+            this.response.cardRenderer(cardTitle, cardText, cardImage).speak(repromptText).listen(repromptText);
+            this.emit(':responseReady');
+        } else {
+            this.response.cardRenderer(cardTitle, cardText, cardImage).speak(newGameText).listen(newGameText);
+            this.emit(':responseReady');
+        }  
     },
 
     'AMAZON.RepeatIntent' : function () {
@@ -100,21 +133,23 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'AMAZON.StartOverIntent' : function () { 
         attempts = 0;
         url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/1.mp3';
-        repromptUrl = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt1.mp3';
+        repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt1.mp3" />';
 
         this.attributes['stories'][storyIndex]['chapter'] = 1;
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+repromptUrl+'" />', cardTitle, cardText, cardImage);
+        this.response.cardRenderer(cardTitle, cardText, cardImage).speak('<audio src="'+url+'" />').listen(repromptText);
+        this.emit(':responseReady');
     },
 
     'AMAZON.StopIntent' : function () { 
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/goodbye.mp3';
-        this.emit(':tellWithCard', '<audio src="'+url+'" /><audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/closing.mp3" />', cardTitle, cardText, cardImage); 
+        this.response.cardRenderer(cardTitle, cardText, cardImage).speak(goodbyeText + closingUrl);
+        this.emit(":responseReady"); 
     },
 
     'AMAZON.YesIntent' : function () {
-        if(this.attributes['stories'][storyIndex]['chapter'] === 80){
+        if (endScenes.indexOf(this.attributes['stories'][storyIndex]['chapter']) !== -1) {
+            this.emitWithState('NewGameIntent');
+        } else if(this.attributes['stories'][storyIndex]['chapter'] === 80){
             this.attributes['stories'][storyIndex]['chapter'] = 81;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 81);
         } else {
             this.emitWithState('Unhandled');
@@ -171,7 +206,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'BackStairsIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 132){
             this.attributes['stories'][storyIndex]['chapter'] = 137;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 137);
         } else {
             this.emitWithState('Unhandled');
@@ -181,7 +215,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'BedPostsIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 131){
             this.attributes['stories'][storyIndex]['chapter'] = 139;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 139);
         } else {
             this.emitWithState('Unhandled');
@@ -198,7 +231,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 break;
             case 69 : 
                 this.attributes['stories'][storyIndex]['chapter'] = 77;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 77);
                 break;
             case 70 : 
@@ -213,7 +245,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'BouquetIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 36){
             this.attributes['stories'][storyIndex]['chapter'] = 37;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 37);
         } else {
             this.emitWithState('Unhandled');
@@ -269,7 +300,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'CoalChuteIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 133){
             this.attributes['stories'][storyIndex]['chapter'] = 134;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 134);
         } else {
             this.emitWithState('Unhandled');
@@ -285,7 +315,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 break;
             case 79 : 
                 this.attributes['stories'][storyIndex]['chapter'] = 84;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 84);
                 break;
             default:
@@ -316,6 +345,11 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'DragonIntent' : function () {
         let chapters = this.attributes['stories'][storyIndex]['chapter'];
         switch(chapters){
+            case 11:
+            case 13:
+                this.attributes['stories'][storyIndex]['chapter'] = 15;
+                this.emitWithState('TellStoryIntent', 15);
+                break;
             case 43 : 
                 this.attributes['stories'][storyIndex]['chapter'] = 52;
                 this.emitWithState('TellStoryIntent', 52);
@@ -332,7 +366,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'DresserIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 131){
             this.attributes['stories'][storyIndex]['chapter'] = 138;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 138);
         } else {
             this.emitWithState('Unhandled');
@@ -363,7 +396,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
             case 144:
             case 145: 
                 this.attributes['stories'][storyIndex]['chapter'] = 146;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 146);
                 break;
             default:
@@ -384,7 +416,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'FireplaceIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 132){
             this.attributes['stories'][storyIndex]['chapter'] = 136;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 136);
         } else {
             this.emitWithState('Unhandled');
@@ -394,7 +425,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'FramedIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 40){
             this.attributes['stories'][storyIndex]['chapter'] = 41;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 41);
         } else {
             this.emitWithState('Unhandled');
@@ -404,18 +434,7 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'FrontPorchIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 133){
             this.attributes['stories'][storyIndex]['chapter'] = 135;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 135);
-        } else {
-            this.emitWithState('Unhandled');
-        }
-    },
-
-    'GetDragonIntent' : function () {
-        let chapters = this.attributes['stories'][storyIndex]['chapter'];
-        if(chapters === 11 || chapters === 13){
-            this.attributes['stories'][storyIndex]['chapter'] = 15;
-            this.emitWithState('TellStoryIntent', 15);
         } else {
             this.emitWithState('Unhandled');
         }
@@ -425,7 +444,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         let chapters = this.attributes['stories'][storyIndex]['chapter'];
         if(chapters === 11 || chapters === 13){
             this.attributes['stories'][storyIndex]['chapter'] = 14;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 14);
         } else {
             this.emitWithState('Unhandled');
@@ -503,7 +521,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 this.emitWithState('TellStoryIntent', 105);
             case 105:
                 this.attributes['stories'][storyIndex]['chapter'] = 109;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 109);   
                 break;
             default:
@@ -515,7 +532,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         let chapters = this.attributes['stories'][storyIndex]['chapter'];
         if(chapters === 73 || chapters === 74){
             this.attributes['stories'][storyIndex]['chapter'] = 75;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 75);
         } else {
             this.emitWithState('Unhandled');
@@ -550,38 +566,31 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         switch (chapters){
             case 44:
                 this.attributes['stories'][storyIndex]['chapter'] = 48;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 48);
                 break;
             case 46:
                 this.attributes['stories'][storyIndex]['chapter'] = 50;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 50);
                 break;
             case 51:
                 this.attributes['stories'][storyIndex]['chapter'] = 60;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 60);
                 break;
             case 52:
                 this.attributes['stories'][storyIndex]['chapter'] = 62;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 62);
                 break;
             case 53:
                 this.attributes['stories'][storyIndex]['chapter'] = 58;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 58);
                 break;
             case 54:
                 this.attributes['stories'][storyIndex]['chapter'] = 56;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 56);
                 break;
             case 123:
             case 126:
                 this.attributes['stories'][storyIndex]['chapter'] = 128;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 128);
                 break;
             default:
@@ -621,7 +630,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'LoveIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 152){
             this.attributes['stories'][storyIndex]['chapter'] = 155;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 155);
         } else {
             this.emitWithState('Unhandled');
@@ -631,7 +639,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'MansionIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 79){
             this.attributes['stories'][storyIndex]['chapter'] = 83;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 83);
         } else {
             this.emitWithState('Unhandled');
@@ -689,7 +696,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 break;
             case 124:
                 this.attributes['stories'][storyIndex]['chapter'] = 125;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 125);
                 break;
             default:
@@ -700,7 +706,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'OneSeventyFiveIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 32){
             this.attributes['stories'][storyIndex]['chapter'] = 34;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 34);
         } else {
             this.emitWithState('Unhandled');
@@ -756,7 +761,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'ParakeetIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 33){
             this.attributes['stories'][storyIndex]['chapter'] = 35;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 35);
         } else {
             this.emitWithState('Unhandled');
@@ -784,7 +788,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 this.emitWithState('TellStoryIntent', 104);
             case 104:
                 this.attributes['stories'][storyIndex]['chapter'] = 108;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 108);   
                 break;
             default:
@@ -821,25 +824,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         }
     },
 
-    'ResultsIntent' : function () {
-        let chapters = this.attributes['stories'][storyIndex]['chapter'];
-        switch(chapters){
-            case 142:
-            case 143:
-                this.attributes['stories'][storyIndex]['chapter'] = 144;
-                this.emitWithState('TellStoryIntent', 144);
-                break;
-            case 156:
-            case 157:
-                this.attributes['stories'][storyIndex]['chapter'] = 158;
-                this.handler.state = states.bookendState;
-                this.emitWithState('EndSceneIntent', 158);
-                break;
-            default:
-                this.emitWithState('Unhandled');
-        }
-    },
-
     'RefuseIntent' : function () {
         let chapters = this.attributes['stories'][storyIndex]['chapter'];
         switch(chapters){
@@ -868,7 +852,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'RubItInIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 147){
             this.attributes['stories'][storyIndex]['chapter'] = 148;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 148);
         } else {
             this.emitWithState('Unhandled');
@@ -889,7 +872,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         switch(chapters){
             case 29 : 
                 this.attributes['stories'][storyIndex]['chapter'] = 30;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 30);
                 break;
             case 121 : 
@@ -936,7 +918,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         let chapters = this.attributes['stories'][storyIndex]['chapter'];
         if(chapters === 29 || chapters === 27){
             this.attributes['stories'][storyIndex]['chapter'] = 31;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 31);
         } else {
             this.emitWithState('Unhandled');
@@ -946,7 +927,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'SmileAndNodIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 149){
             this.attributes['stories'][storyIndex]['chapter'] = 151;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 151);
         } else {
             this.emitWithState('Unhandled');
@@ -962,7 +942,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 break;
             case 106:
                 this.attributes['stories'][storyIndex]['chapter'] = 112;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 112);   
                 break;
             default:
@@ -973,7 +952,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'SnappedIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 40){
             this.attributes['stories'][storyIndex]['chapter'] = 42;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 42);
         } else {
             this.emitWithState('Unhandled');
@@ -1012,6 +990,16 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 this.attributes['stories'][storyIndex]['chapter'] = 141;
                 this.emitWithState('TellStoryIntent', 141);
                 break;
+            case 142:
+            case 143:
+                this.attributes['stories'][storyIndex]['chapter'] = 144;
+                this.emitWithState('TellStoryIntent', 144);
+                break;
+            case 156:
+            case 157:
+                this.attributes['stories'][storyIndex]['chapter'] = 158;
+                this.emitWithState('EndSceneIntent', 158);
+                break;
             default:
                 this.emitWithState('Unhandled');
         }
@@ -1036,7 +1024,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 break;
             case 150:
                 this.attributes['stories'][storyIndex]['chapter'] = 153;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 153);   
                 break;
             default:
@@ -1065,7 +1052,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'TresIntent' : function () {
         if(this.attributes['stories'][storyIndex]['chapter'] === 38){
             this.attributes['stories'][storyIndex]['chapter'] = 39;
-            this.handler.state = states.bookendState;
             this.emitWithState('EndSceneIntent', 39);
         } else {
             this.emitWithState('Unhandled');
@@ -1077,32 +1063,26 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         switch (chapters){
             case 44:
                 this.attributes['stories'][storyIndex]['chapter'] = 47;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 47);
                 break;
             case 46:
                 this.attributes['stories'][storyIndex]['chapter'] = 49;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 49);
                 break;
             case 51:
                 this.attributes['stories'][storyIndex]['chapter'] = 59;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 59);
                 break;
             case 52:
                 this.attributes['stories'][storyIndex]['chapter'] = 61;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 61);
                 break;
             case 53:
                 this.attributes['stories'][storyIndex]['chapter'] = 57;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 57);
                 break;
             case 54:
                 this.attributes['stories'][storyIndex]['chapter'] = 55;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 55);
                 break;
             case 71:
@@ -1113,12 +1093,10 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 break;
             case 123:
                 this.attributes['stories'][storyIndex]['chapter'] = 129;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 129);
                 break;
             case 126:
                 this.attributes['stories'][storyIndex]['chapter'] = 127;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 127);
                 break;        
             default:
@@ -1142,7 +1120,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
             case 22:
             case 23:
                 this.attributes['stories'][storyIndex]['chapter'] = 26;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 26);
                 break;
             case 100:
@@ -1158,7 +1135,6 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 break;
             case 113:
                 this.attributes['stories'][storyIndex]['chapter'] = 115;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 115);   
                 break;
             default:
@@ -1192,189 +1168,67 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 break;
             case 152:
                 this.attributes['stories'][storyIndex]['chapter'] = 154;
-                this.handler.state = states.bookendState;
                 this.emitWithState('EndSceneIntent', 154);
             default:
                 this.emitWithState('Unhandled');     
         }
     },
 
-    'NewGameIntent' : function(){
-        attempts = 0;
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/1.mp3';
-        repromptUrl = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt1.mp3';
-
-        this.attributes['stories'][storyIndex]['chapter'] = 1;
-        
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+url+'" />', cardTitle, cardText, cardImage); 
+    'ContinueIntent' : function () {
+        console.log('why')
+        this.emitWithState('TellStoryIntent', this.attributes['stories'][storyIndex]['chapter']);
     },
 
-    'SkipIntent' : function (){
-        var chapter = this.attributes['stories'][storyIndex]['chapter'];
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3';
-        
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+url+'" />', cardTitle, cardText, cardImage);
-    },
-
-    'TellStoryIntent' : function (chapter){
-        attempts = 0;
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
-        repromptUrl = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3';
- 
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+repromptUrl+'" />', cardTitle, cardText, cardImage);
-    },
-
-    'Unhandled' : function () {
-        if (attempts < 2){
-            attempts++;
-            this.emit(":askWithCard", '<audio src="'+repromptUrl+'" />','<audio src="'+repromptUrl+'" />', cardTitle, cardText, cardImage);
-        } else {
-            url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/unhandled.mp3';
-            this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+url+'" />', cardTitle, cardText, cardImage); 
-        }    
-    }    
-        
-});
-
-const bookendHandlers = Alexa.CreateStateHandler(states.bookendState, {
-
-    'LaunchRequest': function(){
-        storyIndex = getActiveStoryIndex.call(this);
-        this.handler.state = states.gameState;
-        var chapter = this.attributes['stories'][storyIndex]['chapter'];
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
-        repromptUrl = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3';
-        this.emitWithState(':askWithCard', '<audio src="https://s3.amazonaws/selectastory/cinderella/prod/opening.mp3" /><audio src="'+url+'" />', '<audio src="'+repromptUrl+'" />', cardTitle, cardText, cardImage);
-    },
-
-    'SessionEndedRequest' : function () {
-        this.emit(':saveState', true);
-    },
-
-    // Amazon Intents
-    
-    'AMAZON.CancelIntent' : function () { 
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/goodbye.mp3';
-        this.emit(':tellWithCard', '<audio src="'+url+'" /><audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/closing.mp3" />', cardTitle, cardText, cardImage); 
-    },
-
-    'AMAZON.HelpIntent' : function () {
-        attempts = 0;
-        this.handler.state = states.helpState;
-        this.emitWithState('HelpIntent');
-    }, 
-
-    'AMAZON.NoIntent' : function () {
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/goodbye.mp3';
-        this.handler.state = states.gameState;
-        this.emitWithState(':tellWithCard', '<audio src="'+url+'" /><audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/closing.mp3" />', cardTitle, cardText, cardImage); 
-    },
-
-    'AMAZON.StartOverIntent' : function () { 
-        this.handler.state = states.gameState;
-        this.emitWithState('NewGameIntent'); 
-    },
-
-    'AMAZON.StopIntent' : function () { 
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/goodbye.mp3';
-        this.emit(':tellWithCard', '<audio src="'+url+'" /><audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/closing.mp3" />', cardTitle, cardText, cardImage); 
-    },
-
-    'AMAZON.YesIntent' : function () {
-        this.handler.state = states.gameState;
-        this.emitWithState('NewGameIntent');
-    }, 
-    
-    // Custom Intents
-    
     'EndSceneIntent' : function (chapter) {
         attempts = 0;
         url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
-        this.attributes['stories'][storyIndex]['chapter'] = 1;
-       
-        this.emit(':askWithCard', '<audio src="'+url+'" /><audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/startover.mp3 />', '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/startover.mp3 />', cardTitle, cardText, cardImage);
+        repromptText = newGameText;
+        this.response.cardRenderer(cardTitle, cardText, cardImage).speak('<audio src="' + url + '" />' + '<break time="1.5s" />' + newGameText).listen(newGameText);
+        this.emit(':responseReady');
     },
 
-    'NewGameIntent' : function(){
-        this.handler.state = states.gameState;
-        this.emitWithState('NewGameIntent'); 
-    },
-
-    'Unhandled' : function () {
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/unhandled.mp3';
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+url+'" />', cardTitle, cardText, cardImage); 
-    }
-});
-
-const helpHandlers = Alexa.CreateStateHandler(states.helpState, {
-    
-    'LaunchRequest': function(){
-        storyIndex = getActiveStoryIndex.call(this);
-        this.handler.state = states.gameState;
-        var chapter = this.attributes['stories'][storyIndex]['chapter'];
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
-        repromptUrl = 'https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3';
-        this.emitWithState(':askWithCard', '<audio src="https://s3.amazonaws/selectastory/cinderella/prod/opening.mp3" /><audio src="'+url+'" />', '<audio src="'+repromptUrl+'" />', cardTitle, cardText, cardImage);
-    },
-
-    'SessionEndedRequest' : function () {
-        this.emit(':saveState', true);
-    },
-
-    //Amazon Intents
-    'AMAZON.CancelIntent' : function () { 
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/goodbye.mp3';
-        this.emit(':tellWithCard', '<audio src="'+url+'" /><audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/closing.mp3" />', cardTitle, cardText, cardImage); 
-    },
-
-    'AMAZON.HelpIntent' : function () {
-        attempts = 0;
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/help.mp3';
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+url+'" />', cardTitle, cardText, cardImage); 
-    }, 
-
-    'AMAZON.RepeatIntent' : function () {
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/help.mp3';
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+url+'" />', cardTitle, cardText, cardImage); 
-    }, 
-
-    'AMAZON.StartOverIntent' : function () { 
-        this.handler.state = states.gameState;
-        this.attributes['stories'][storyIndex]['chapter'] = 1;
-        this.emitWithState('NewGameIntent'); 
-    },
-
-    'AMAZON.StopIntent' : function () { 
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/goodbye.mp3';
-        this.emit(':tellWithCard', '<audio src="'+url+'" /><audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/closing.mp3" />', cardTitle, cardText, cardImage); 
-    },
-    
-    'AMAZON.YesIntent' : function () {
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/help.mp3';
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+url+'" />', cardTitle, cardText, cardImage); 
-    },
-
-    // Custom Intents
     'GoBackIntent' : function () {
         this.handler.state = states.gameState;
         var chapter = this.attributes['stories'][storyIndex]['chapter'];
         this.emitWithState('TellStoryIntent', chapter);
     },
 
-    'HelpIntent' : function (){
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/help.mp3';
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+url+'" />', cardTitle, cardText, cardImage);
-    }, 
-
     'NewGameIntent' : function(){
-        this.handler.state = states.gameState;
-        this.emitWithState('NewGameIntent'); 
+        attempts = 0;
+        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/1.mp3';
+        repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt1.mp3" />';
+
+        this.attributes['stories'][storyIndex]['chapter'] = 1;
+        this.response.cardRenderer(cardText, cardTitle, cardImage).speak('<audio src="'+url+'" />').listen(repromptText);
+        this.emit(':responseReady');
     },
-    
+
+    'TellStoryIntent' : function (chapter, introText){
+        attempts = 0;
+        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+chapter+'.mp3';
+        repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+chapter+'.mp3" />';
+        if(introText){
+            this.response.cardRenderer(cardTitle, cardText, cardImage).speak(openingUrl + introText + '<break time="2s" /><audio src="'+url+'" />').listen(repromptText);
+            this.emit(':responseReady');
+        } else {
+            this.response.cardRenderer(cardTitle, cardText, cardImage).speak('<audio src="'+url+'" />').listen(repromptText);
+            this.emit(':responseReady');
+        }
+        
+    },
+
     'Unhandled' : function () {
-        url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/unhandled.mp3';
-        this.emit(':askWithCard', '<audio src="'+url+'" />', '<audio src="'+url+'" />', cardTitle, cardText, cardImage); 
-    }
+        if (attempts < 2){
+            attempts++;
+            this.response.cardRenderer(cardTitle, cardText, cardImage).speak(repromptText).listen(repromptText);
+            this.emit(":responseReady");
+        } else {
+            attempts = 0;
+            this.response.cardRenderer(cardTitle, cardText, cardImage).speak("Why don't you come back another time and play again." + closingUrl);
+            this.emit(':responseReady');
+        }
+    }    
+        
 });
 
 // App Helper Functions
@@ -1393,6 +1247,6 @@ exports.handler = function (event, context, callback) {
     var alexa = Alexa.handler(event, context, callback);
     alexa.APP_ID = APP_ID;
     alexa.dynamoDBTableName = 'SelectAStoryTest'; 
-    alexa.registerHandlers(newSessionHandlers, helpHandlers, bookendHandlers, gameHandlers);
+    alexa.registerHandlers(newSessionHandlers, gameHandlers);
     alexa.execute();
 };

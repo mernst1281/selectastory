@@ -10,6 +10,9 @@
           "name": "AMAZON.RepeatIntent"
         },
         {
+          "name": "AMAZON.NextIntent"
+        },
+        {
           "name": "AMAZON.HelpIntent",
           "samples": [
             "help"
@@ -64,7 +67,8 @@
           "name": "BackStairsIntent",
           "samples": [
             "\tback stairs",
-            "look in the back stairs"
+            "look in the back stairs",
+            "stairs"
           ]
         },
         {
@@ -162,7 +166,12 @@
           "samples": [
             "\tdragon",
             "\tgo to the dragon",
-            "\thead to the dragon"
+            "\thead to the dragon",
+            "\tget the dragon",
+            "\tget the dragon myself",
+            "\tget the dragon yourself",
+            "dragon yourself",
+            "dragon myself"
           ]
         },
         {
@@ -228,17 +237,6 @@
             "\tfront porch",
             "\tunder the front porch",
             "look under the front porch"
-          ]
-        },
-        {
-          "name": "GetDragonIntent",
-          "samples": [
-            "\tget the dragon",
-            "\tget the dragon myself",
-            "\tget the dragon yourself",
-            "dragon yourself",
-            "dragon myself",
-            "dragon"
           ]
         },
         {
@@ -387,7 +385,8 @@
           "samples": [
             "\ttake the offer",
             "offer",
-            "accept the offer"
+            "accept the offer",
+            "accept"
           ]
         },
         {
@@ -482,17 +481,10 @@
           ]
         },
         {
-          "name": "ResultsIntent",
-          "samples": [
-            "\thear results",
-            "\tresults",
-            "\tstay to hear results"
-          ]
-        },
-        {
           "name": "RubItInIntent",
           "samples": [
-            "\trub it in"
+            "\trub it in",
+            "rub in"
           ]
         },
         {
@@ -587,8 +579,21 @@
           "name": "StayIntent",
           "samples": [
             "\tstay here",
-            "\tstay to help"
+            "\tstay to help",
+            "stay",
+            "\thear results",
+            "\tresults",
+            "\tstay to hear results"
           ]
+        },
+        {
+            "name": "ContinueIntent",
+            "samples": [
+                "finish last story",
+                "finish story",
+                "finish my last story",
+                "finish your last story"
+            ]
         },
         {
           "name": "TantrumIntent",
@@ -668,20 +673,21 @@
             "will myself",
             "will yourself",
             "\tthe will",
-            "\twill"
+            "\twill",
+            "look for it yourself",
+            "look for it myself"
           ]
         },
         {
           "name": "NewGameIntent",
           "samples": [
             "new game",
-            "play new game"
-          ]
-        },
-        {
-          "name": "SkipIntent",
-          "samples": [
-            "skip"
+            "play new game",
+            "start a new game",
+            "start new game",
+            "begin game",
+            "begin a new game",
+            "begin new game"
           ]
         },
         {
