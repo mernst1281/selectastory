@@ -654,7 +654,8 @@
           "name": "WaitIntent",
           "samples": [
             "\tkeep waiting",
-            "\twait"
+            "\twait",
+            "wait around"
           ]
         },
         {
