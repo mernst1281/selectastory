@@ -42,8 +42,8 @@
         {
           "name": "AidIntent",
           "samples": [
-            "\taid",
-            "\taid the bird",
+            "aid",
+            "aid the bird",
             "aid bird",
             "bird"
           ]
@@ -51,22 +51,22 @@
         {
           "name": "AssistanceIntent",
           "samples": [
-            "\taccept assistance",
-            "\tassist",
-            "\tstay to assist"
+            "accept assistance",
+            "assist",
+            "stay to assist"
           ]
         },
         {
           "name": "AttorneyIntent",
           "samples": [
-            "\tattorney",
-            "\tfind the attorney"
+            "attorney",
+            "find the attorney"
           ]
         },
         {
           "name": "BackStairsIntent",
           "samples": [
-            "\tback stairs",
+            "back stairs",
             "look in the back stairs",
             "stairs"
           ]
@@ -77,22 +77,22 @@
         {
           "name": "BadNewsIntent",
           "samples": [
-            "\tbad",
-            "\tbad news"
+            "bad",
+            "bad news"
           ]
         },
         {
           "name": "BedPostsIntent",
           "samples": [
-            "\tbedposts",
-            "\this bedposts",
+            "bedposts",
+            "his bedposts",
             "look in his bedposts"
           ]
         },
         {
           "name": "BlondeIntent",
           "samples": [
-            "\tblonde",
+            "blonde",
             "I pick the blonde",
             "I choose the blonde"
           ]
@@ -100,9 +100,9 @@
         {
           "name": "BouquetIntent",
           "samples": [
-            "\tbouquet",
-            "\tbouquet of flowers",
-            "\tflowers",
+            "bouquet",
+            "bouquet of flowers",
+            "flowers",
             "answer bouquet of flowers",
             "answer bouquet",
             "answer flowers"
@@ -111,7 +111,7 @@
         {
           "name": "BrunetteIntent",
           "samples": [
-            "\tbrunette",
+            "brunette",
             "i pick the brunette",
             "i choose the brunette"
           ]
@@ -119,7 +119,7 @@
         {
           "name": "BurstInIntent",
           "samples": [
-            "\tburst in",
+            "burst in",
             "burst",
             "bust in"
           ]
@@ -127,15 +127,15 @@
         {
           "name": "ClarenceIntent",
           "samples": [
-            "\tclarence",
-            "\tfind clarence"
+            "clarence",
+            "find clarence"
           ]
         },
         {
           "name": "CoalChuteIntent",
           "samples": [
-            "\tcoal chute",
-            "\tlook in the coal chute",
+            "coal chute",
+            "look in the coal chute",
             "coal",
             "chute"
           ]
@@ -143,33 +143,33 @@
         {
           "name": "CottageIntent",
           "samples": [
-            "\tcottage",
-            "\tmodest cottage",
+            "cottage",
+            "modest cottage",
             "modest"
           ]
         },
         {
           "name": "DoSomethingIntent",
           "samples": [
-            "\tdo something"
+            "do something"
           ]
         },
         {
           "name": "DownstairsIntent",
           "samples": [
-            "\tdownstairs",
+            "downstairs",
             "look downstairs"
           ]
         },
         {
           "name": "DragonIntent",
           "samples": [
-            "\tdragon",
-            "\tgo to the dragon",
-            "\thead to the dragon",
-            "\tget the dragon",
-            "\tget the dragon myself",
-            "\tget the dragon yourself",
+            "dragon",
+            "go to the dragon",
+            "head to the dragon",
+            "get the dragon",
+            "get the dragon myself",
+            "get the dragon yourself",
             "dragon yourself",
             "dragon myself"
           ]
@@ -177,9 +177,9 @@
         {
           "name": "DresserIntent",
           "samples": [
-            "\told dresser",
-            "\tsearch old dresser",
-            "\tsearch your father's old dresser",
+            "old dresser",
+            "search old dresser",
+            "search your father's old dresser",
             "look in dresser",
             "look in old dresser",
             "look in your father's old dress",
@@ -189,60 +189,60 @@
         {
           "name": "DropIntent",
           "samples": [
-            "\tdrop weapon",
-            "\tdrop your weapon",
+            "drop weapon",
+            "drop your weapon",
             "drop my weapon"
           ]
         },
         {
           "name": "FairyIntent",
           "samples": [
-            "\tfairy",
-            "\tfind a fairy"
+            "fairy",
+            "find a fairy"
           ]
         },
         {
           "name": "FinchesIntent",
           "samples": [
-            "\tfinches",
+            "finches",
             "pick the finches",
-            "\tpick the finches"
+            "pick the finches"
           ]
         },
         {
           "name": "FindHerIntent",
           "samples": [
-            "\tfind her"
+            "find her"
           ]
         },
         {
           "name": "FireplaceIntent",
           "samples": [
-            "\tfireplace",
-            "\tsearch by the fireplace",
-            "\tsearch fireplace",
+            "fireplace",
+            "search by the fireplace",
+            "search fireplace",
             "look by the fireplace"
           ]
         },
         {
           "name": "FramedIntent",
           "samples": [
-            "\tframed",
+            "framed",
             "say framed"
           ]
         },
         {
           "name": "FrontPorchIntent",
           "samples": [
-            "\tfront porch",
-            "\tunder the front porch",
+            "front porch",
+            "under the front porch",
             "look under the front porch"
           ]
         },
         {
           "name": "GiveUpIntent",
           "samples": [
-            "\tgive up",
+            "give up",
             "give",
             "up"
           ]
@@ -250,43 +250,43 @@
         {
           "name": "GoForItIntent",
           "samples": [
-            "\tgo for it"
+            "go for it"
           ]
         },
         {
           "name": "GoingIntent",
           "samples": [
-            "\tkeep going",
+            "keep going",
             "going"
           ]
         },
         {
           "name": "GoodIntent",
           "samples": [
-            "\tgood"
+            "good"
           ]
         },
         {
           "name": "GoodNewsIntent",
           "samples": [
-            "\tgood news",
-            "\tthe good news"
+            "good news",
+            "the good news"
           ]
         },
         {
           "name": "HaikuIntent",
           "samples": [
-            "\thaiku",
+            "haiku",
             "it was a haiku",
-            "\twrite a haiku",
+            "write a haiku",
             "i write a haiku"
           ]
         },
         {
           "name": "HearMoreIntent",
           "samples": [
-            "\task to hear more",
-            "\thear more",
+            "ask to hear more",
+            "hear more",
             "hear",
             "more"
           ]
@@ -294,15 +294,15 @@
         {
           "name": "KnifeIntent",
           "samples": [
-            "\tknife them",
-            "\tswing the knife",
-            "\tthe knife"
+            "knife them",
+            "swing the knife",
+            "the knife"
           ]
         },
         {
           "name": "LeaveAloneIntent",
           "samples": [
-            "\tleave her alone",
+            "leave her alone",
             "leave alone",
             "leave her"
           ]
@@ -310,11 +310,11 @@
         {
           "name": "LeaveIntent",
           "samples": [
-            "\tleave early",
-            "\tleave kitchen",
-            "\tleave the kitchen",
+            "leave early",
+            "leave kitchen",
+            "leave the kitchen",
             "leave",
-            "\tleave it"
+            "leave it"
           ]
         },
         {
@@ -323,15 +323,15 @@
         {
           "name": "LieIntent",
           "samples": [
-            "\tflat out lie",
-            "\tlie",
+            "flat out lie",
+            "lie",
             "flat out"
           ]
         },
         {
           "name": "LimerickIntent",
           "samples": [
-            "\tlimerick",
+            "limerick",
             "it was a limerick",
             "I write a limerick"
           ]
@@ -339,36 +339,36 @@
         {
           "name": "ListenIntent",
           "samples": [
-            "\tkeep listening",
-            "\tlisten",
+            "keep listening",
+            "listen",
             "listening"
           ]
         },
         {
           "name": "LoveIntent",
           "samples": [
-            "\tlove"
+            "love"
           ]
         },
         {
           "name": "MansionIntent",
           "samples": [
-            "\tmansion"
+            "mansion"
           ]
         },
         {
           "name": "MatureIntent",
           "samples": [
-            "\tact mature",
+            "act mature",
             "mature"
           ]
         },
         {
           "name": "MouthShutIntent",
           "samples": [
-            "\tkeep your mouth shut",
-            "\tkeep my mouth shut",
-            "\tmouth shut",
+            "keep your mouth shut",
+            "keep my mouth shut",
+            "mouth shut",
             "keep it shut",
             "keep mouth shut"
           ]
@@ -376,14 +376,14 @@
         {
           "name": "MurderIntent",
           "samples": [
-            "\tcommit murder",
-            "\tmurder"
+            "commit murder",
+            "murder"
           ]
         },
         {
           "name": "OfferIntent",
           "samples": [
-            "\ttake the offer",
+            "take the offer",
             "offer",
             "accept the offer",
             "accept"
@@ -392,65 +392,65 @@
         {
           "name": "OneFiftyIntent",
           "samples": [
-            "\tone fifty",
+            "one fifty",
             "answer one fifty"
           ]
         },
         {
           "name": "OneSeventyFiveIntent",
           "samples": [
-            "\tone hundred and seventy five",
-            "\tone seventy five",
+            "one hundred and seventy five",
+            "one seventy five",
             "answer one seventy five"
           ]
         },
         {
           "name": "OpalDragonIntent",
           "samples": [
-            "Intent \tseek an opal dragon",
-            "\topal",
-            "\tseek an opal",
+            "Intent seek an opal dragon",
+            "opal",
+            "seek an opal",
             "opal dragon"
           ]
         },
         {
           "name": "OstrichIntent",
           "samples": [
-            "\tostrich",
+            "ostrich",
             "say ostrich"
           ]
         },
         {
           "name": "OutsideIntent",
           "samples": [
-            "\toutside"
+            "outside"
           ]
         },
         {
           "name": "PalaceIntent",
           "samples": [
-            "\tpalace"
+            "palace"
           ]
         },
         {
           "name": "ParakeetIntent",
           "samples": [
-            "\tparakeet",
+            "parakeet",
             "say parakeet"
           ]
         },
         {
           "name": "PigeonIntent",
           "samples": [
-            "\tpigeons",
+            "pigeons",
             "pick the pigeons"
           ]
         },
         {
           "name": "PoisonIntent",
           "samples": [
-            "\tpoison",
-            "\tpoison them",
+            "poison",
+            "poison them",
             "let die",
             "let them die"
           ]
@@ -458,14 +458,14 @@
         {
           "name": "RainbowIntent",
           "samples": [
-            "\trainbow",
+            "rainbow",
             "say rainbow"
           ]
         },
         {
           "name": "ReconsiderIntent",
           "samples": [
-            "\tchange your mind",
+            "change your mind",
             "change mind",
             "change my mind"
           ]
@@ -473,9 +473,9 @@
         {
           "name": "RefuseIntent",
           "samples": [
-            "\trefuse immediately",
-            "\trefuse my father",
-            "\trefuse your father",
+            "refuse immediately",
+            "refuse my father",
+            "refuse your father",
             "refuse",
             "immediately"
           ]
@@ -483,16 +483,16 @@
         {
           "name": "RubItInIntent",
           "samples": [
-            "\trub it in",
+            "rub it in",
             "rub in"
           ]
         },
         {
           "name": "RubyDragonIntent",
           "samples": [
-            "\truby",
-            "\truby dragon",
-            "\tseek a ruby dragon",
+            "ruby",
+            "ruby dragon",
+            "seek a ruby dragon",
             "seek a ruby"
           ]
         },
@@ -502,46 +502,46 @@
         {
           "name": "RunIntent",
           "samples": [
-            "\trun away",
-            "\trun",
-            "\trun for it"
+            "run away",
+            "run",
+            "run for it"
           ]
         },
         {
           "name": "SatchelIntent",
           "samples": [
-            "\tbring a satchel",
-            "\tsatchel",
+            "bring a satchel",
+            "satchel",
             "bring"
           ]
         },
         {
           "name": "SeaIntent",
           "samples": [
-            "\tgo to the sea",
-            "\tthe sea"
+            "go to the sea",
+            "the sea"
           ]
         },
         {
           "name": "ShoeIntent",
           "samples": [
-            "\tthe shoe",
-            "\tuse the shoe",
+            "the shoe",
+            "use the shoe",
             "shoe"
           ]
         },
         {
           "name": "SlashIntent",
           "samples": [
-            "\tslash",
-            "\tslash her",
-            "\tslash the dragon"
+            "slash",
+            "slash her",
+            "slash the dragon"
           ]
         },
         {
           "name": "SmileAndNodIntent",
           "samples": [
-            "\tsmile and nod",
+            "smile and nod",
             "smile",
             "nod"
           ]
@@ -549,41 +549,41 @@
         {
           "name": "SmotherIntent",
           "samples": [
-            "\tsmother",
-            "\tsmother her"
+            "smother",
+            "smother her"
           ]
         },
         {
           "name": "SnappedIntent",
           "samples": [
-            "\tsnapped",
+            "snapped",
             "say snapped"
           ]
         },
         {
           "name": "SneakIntent",
           "samples": [
-            "\tsneak",
+            "sneak",
             "sneak past",
-            "\tsneak past her"
+            "sneak past her"
           ]
         },
         {
           "name": "SnoopIntent",
           "samples": [
-            "\tsnoop",
-            "\tsnoop around"
+            "snoop",
+            "snoop around"
           ]
         },
         {
           "name": "StayIntent",
           "samples": [
-            "\tstay here",
-            "\tstay to help",
+            "stay here",
+            "stay to help",
             "stay",
-            "\thear results",
-            "\tresults",
-            "\tstay to hear results"
+            "hear results",
+            "results",
+            "stay to hear results"
           ]
         },
         {
@@ -598,15 +598,15 @@
         {
           "name": "TantrumIntent",
           "samples": [
-            "\ttantrum",
-            "\tthrow a tantrum",
+            "tantrum",
+            "throw a tantrum",
             "throw"
           ]
         },
         {
           "name": "TellHimIntent",
           "samples": [
-            "\ttell him what you think",
+            "tell him what you think",
             "tell him",
             "what you think",
             "open up"
@@ -615,14 +615,14 @@
         {
           "name": "TimIntent",
           "samples": [
-            "\tTim",
+            "Tim",
             "say Tim"
           ]
         },
         {
           "name": "TravelLightIntent",
           "samples": [
-            "\ttravel light",
+            "travel light",
             "travel",
             "light"
           ]
@@ -630,51 +630,51 @@
         {
           "name": "TresIntent",
           "samples": [
-            "\ttrace",
+            "trace",
             "say trace"
           ]
         },
         {
           "name": "TruthIntent",
           "samples": [
-            "\ta version of the truth",
-            "\ttell her the truth",
-            "\tthe truth",
+            "a version of the truth",
+            "tell her the truth",
+            "the truth",
             "tell her a version of the truth"
           ]
         },
         {
           "name": "UpstairsIntent",
           "samples": [
-            "\tlook upstairs",
-            "\tupstairs"
+            "look upstairs",
+            "upstairs"
           ]
         },
         {
           "name": "WaitIntent",
           "samples": [
-            "\tkeep waiting",
-            "\twait",
+            "keep waiting",
+            "wait",
             "wait around"
           ]
         },
         {
           "name": "WearIntent",
           "samples": [
-            "\twear",
-            "\twear it"
+            "wear",
+            "wear it"
           ]
         },
         {
           "name": "WillIntent",
           "samples": [
-            "\tfind the will",
-            "\tlook for the will yourself",
+            "find the will",
+            "look for the will yourself",
             "look for the will myself",
             "will myself",
             "will yourself",
-            "\tthe will",
-            "\twill",
+            "the will",
+            "will",
             "look for it yourself",
             "look for it myself"
           ]
