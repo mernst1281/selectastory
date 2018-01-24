@@ -1,5 +1,6 @@
 const Alexa = require('alexa-sdk');
 const bst = require('bespoken-tools');
+const VoiceLabs = require("voicelabs")('1b066170-fd30-11a7-0c83-0eb19d13e26e');
 
 // App Config
 
@@ -81,7 +82,9 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'AMAZON.CancelIntent' : function () { 
         this.attributes['attempts'] = 0;
         this.response.cardRenderer(cardTitle, cardText, cardImage).speak(goodbyeText + closingUrl);
-        this.emit(":responseReady");
+        VoiceLabs.track(this.event.session, "SessionEnd", null, null, (error, response) => {
+            this.emit(":responseReady");    
+        });
     },
 
      'AMAZON.HelpIntent' : function () {
@@ -94,14 +97,20 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                         If you need these instructions again just say, help. \
                         To go back to the game say, go back.";
         this.response.cardRenderer(cardTitle, cardText, cardImage).speak(helpText).listen('Say repeat to hear these instructions again or go back to continue the game');
-        this.emit(":responseReady");
+        const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+        const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+        VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+            this.emit(':responseReady');
+        });
     }, 
 
     'AMAZON.NoIntent' : function () {
         if (endScenes.indexOf(this.attributes['stories'][storyIndex]['chapter']) !== -1) {
             this.attributes['stories'][storyIndex]['chapter'] = 1;
             this.response.cardRenderer(cardTitle, cardText, cardImage).speak(goodbyeText + closingUrl);
-            this.emit(":responseReady");
+            VoiceLabs.track(this.event.session, "SessionEnd", null, null, (error, response) => {
+                this.emit(":responseReady");    
+            });
         } else if(this.attributes['stories'][storyIndex]['chapter'] === 80){
             this.attributes['stories'][storyIndex]['chapter'] = 82;
             this.emitWithState('EndSceneIntent');
@@ -114,15 +123,27 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         if(endScenes.indexOf(this.attributes['stories'][storyIndex]['chapter']) === -1){
             let repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+this.attributes['stories'][storyIndex]['chapter']+'.mp3" />'; 
             this.response.cardRenderer(cardTitle, cardText, cardImage).speak(repromptText).listen(repromptText);
-            this.emit(':responseReady');
+            const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+            const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+            VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                this.emit(':responseReady');
+            });
         } else {
             this.response.cardRenderer(cardTitle, cardText, cardImage).speak(newGameText).listen(newGameText);
-            this.emit(':responseReady');
+            const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+            const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+            VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                this.emit(':responseReady');
+            });
         }  
     },
 
     'AMAZON.RepeatIntent' : function () {
-        this.emitWithState('TellStoryIntent'); 
+        if(endScenes.indexOf(this.attributes['stories'][storyIndex]['chapter']) !== -1){
+            this.emitWithState('EndSceneIntent');
+        } else {
+            this.emitWithState('TellStoryIntent'); 
+        } 
     },
 
     'AMAZON.StartOverIntent' : function () { 
@@ -133,14 +154,20 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
 
         this.attributes['stories'][storyIndex]['chapter'] = 1;
         this.response.cardRenderer(cardTitle, cardText, cardImage).speak('<audio src="'+url+'" />').listen(repromptText);
-        this.emit(':responseReady');
+        const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+        const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+        VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+            this.emit(':responseReady');
+        });
     },
 
     'AMAZON.StopIntent' : function () {
         this.attributes['attempts'] = 0; 
         this.attributes['endScene'] = false;
         this.response.cardRenderer(cardTitle, cardText, cardImage).speak(goodbyeText + closingUrl);
-        this.emit(":responseReady"); 
+        VoiceLabs.track(this.event.session, "SessionEnd", null, null, (error, response) => {
+            this.emit(":responseReady");    
+        }); 
     },
 
     'AMAZON.YesIntent' : function () {
@@ -151,7 +178,11 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
             this.emitWithState('EndSceneIntent');
         } else if(this.attributes['continue']) {
             this.response.speak('You can say finish your game or new game').listen('you can say finish your game or new game');
-            this.emit(':responseReady');
+            const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+            const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+            VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                this.emit(':responseReady');
+            });
         } else {
             this.emitWithState('Unhandled');
         }
@@ -507,7 +538,7 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     },
 
     'HearMoreIntent' : function () {
-        if(this.attributes['stories'][storyIndex]['chapter'] = 10){
+        if(this.attributes['stories'][storyIndex]['chapter'] === 10){
             this.attributes['stories'][storyIndex]['chapter'] = 12;
             this.emitWithState('TellStoryIntent');
         } else {
@@ -1193,7 +1224,11 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
                 let text = 'Sorry, that is not an option right now.';
                 let repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt' + this.attributes['stories'][storyIndex]['chapter'] + '.mp3" />';
                 this.response.speak(text + '<break time=".5s" />' + repromptText).listen(repromptText).cardRenderer(cardTitle, cardText, cardImage);
-                this.emit(':responseReady');
+                const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+                const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+                VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                    this.emit(':responseReady');
+                });
             }
         }      
     },
@@ -1203,7 +1238,11 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         this.attributes['endScene'] = true;
         let url = 'https://s3.amazonaws.com/selectastory/cinderella/prod/'+this.attributes['stories'][storyIndex]['chapter']+'.mp3';
         this.response.speak('<audio src="' + url + '" />' + '<break time="1.5s" />' + newGameText).listen(newGameText).cardRenderer(cardTitle, cardText, cardImage);
-        this.emit(':responseReady');
+        const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+        const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+        VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+            this.emit(':responseReady');
+        });
     },
 
     'GoBackIntent' : function () {
@@ -1219,7 +1258,11 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
 
         this.attributes['stories'][storyIndex]['chapter'] = 1;
         this.response.cardRenderer(cardText, cardTitle, cardImage).speak('<audio src="'+url+'" />').listen(repromptText);
-        this.emit(':responseReady');
+        const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+        const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+        VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+            this.emit(':responseReady');
+        });
     },
 
     'TellStoryIntent' : function (introText, newUser){
@@ -1228,13 +1271,25 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
         let repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt'+this.attributes['stories'][storyIndex]['chapter']+'.mp3" />';
         if(introText && newUser){
             this.response.speak(openingUrl + introText + '<break time="2s" /><audio src="'+url+'" />').listen(repromptText).cardRenderer(cardTitle, cardText, cardImage);
-            this.emit(':responseReady');
+            const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+            const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+            VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                this.emit(':responseReady');
+            });
         } else if (introText) {
             this.response.speak(openingUrl + introText).listen('would you like to finish your story or begin a new game?').cardRenderer(cardTitle, cardText, cardImage);
-            this.emit(':responseReady');
+            const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+            const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+            VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                this.emit(':responseReady');
+            });
         } else {
             this.response.speak('<audio src="'+url+'" />').listen(repromptText).cardRenderer(cardTitle, cardText, cardImage);
-            this.emit(':responseReady');
+            const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+            const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+            VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                this.emit(':responseReady');
+            });
         }
         
     },
@@ -1242,16 +1297,28 @@ const gameHandlers = Alexa.CreateStateHandler(states.gameState,  {
     'Unhandled' : function () {
         if (endScenes.indexOf(this.attributes['stories'][storyIndex]['chapter']) !== -1){
             this.response.speak('if you would like to start a new game, say "new game"').listen('if you would like to start a new game, say "new game"').cardRenderer(cardTitle, cardText, cardImage);
-            this.emit(':responseReady');
+            const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+            const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+            VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                this.emit(':responseReady');
+            });
         } else if (this.attributes['attempts'] < 2){
             this.attributes['attempts']++;
             let repromptText = '<audio src="https://s3.amazonaws.com/selectastory/cinderella/prod/reprompt' + this.attributes['stories'][storyIndex]['chapter'] + '.mp3" />';
             this.response.cardRenderer(cardTitle, cardText, cardImage).speak(repromptText).listen(repromptText);
-            this.emit(":responseReady");
+            const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+            const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+            VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                this.emit(':responseReady');
+            });
         } else {
             this.attributes['attempts'] = 0;
             this.response.cardRenderer(cardTitle, cardText, cardImage).speak("Why don't you come back another time and play again." + closingUrl);
-            this.emit(':responseReady');
+            const intentName = this.event.request.intent ? this.event.request.intent.name : 'LaunchRequest';
+            const intentSlots = this.event.request.intent ? this.event.request.intent.slots : null;
+            VoiceLabs.track(this.event.session, intentName, intentSlots, null, (error, response) => {
+                this.emit(':responseReady');
+            });
         }
     }    
         
